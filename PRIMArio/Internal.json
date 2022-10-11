@@ -15,7 +15,7 @@
   },
   "Graph|2022-10-11T13:54:21.566Z|10351": {
     "ƒ.Graph": {
-      "name": "NewGraph",
+      "name": "levelOne",
       "active": true,
       "components": {
         "ComponentMesh": [
@@ -47,7 +47,7 @@
               "Component": {
                 "active": true
               },
-              "idMaterial": "Material|2022-10-11T13:53:28.117Z|03512"
+              "idMaterial": "Material|2022-10-11T14:01:32.899Z|15644"
             }
           }
         ]
@@ -62,6 +62,18 @@
       "idResource": "MeshCube|2022-10-11T13:54:49.299Z|70375",
       "name": "MeshCube",
       "type": "MeshCube"
+    }
+  },
+  "Material|2022-10-11T14:01:32.899Z|15644": {
+    "ƒ.Material": {
+      "name": "ShaderLit",
+      "idResource": "Material|2022-10-11T14:01:32.899Z|15644",
+      "shader": "ShaderLit",
+      "coat": {
+        "ƒ.CoatColored": {
+          "color": "[0.09411764705882353, 0.5686274509803921, 0.17254901960784313, 1]"
+        }
+      }
     }
   }
 }
