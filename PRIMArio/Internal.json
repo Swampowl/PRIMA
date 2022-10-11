@@ -9,7 +9,41 @@
     "ƒ.Graph": {
       "name": "LevelOne",
       "active": true,
-      "components": {},
+      "components": {
+        "ComponentMesh": [
+          {
+            "ƒ.ComponentMesh": {
+              "idMesh": "MeshQuad|2022-10-11T17:38:38.801Z|95514",
+              "pivot": {
+                "translation": "[5, 4, -1]",
+                "rotation": "[0, 0, 0]",
+                "scaling": "[16, 11, 1]"
+              },
+              "Component": {
+                "active": true
+              }
+            }
+          }
+        ],
+        "ComponentMaterial": [
+          {
+            "ƒ.ComponentMaterial": {
+              "sortForAlpha": false,
+              "clrPrimary": "[1, 1, 1, 1]",
+              "clrSecondary": "[1, 1, 1, 1]",
+              "pivot": {
+                "translation": "[0, 0]",
+                "rotation": 0,
+                "scaling": "[1, 1]"
+              },
+              "Component": {
+                "active": true
+              },
+              "idMaterial": "Material|2022-10-11T18:53:14.843Z|29135"
+            }
+          }
+        ]
+      },
       "children": [
         {
           "ƒ.GraphInstance": {
@@ -413,6 +447,30 @@
       "children": [],
       "idResource": "Graph|2022-10-11T18:08:42.577Z|50385",
       "type": "Graph"
+    }
+  },
+  "TextureImage|2022-10-11T18:52:15.921Z|24382": {
+    "ƒ.TextureImage": {
+      "url": "Images\\BG\\BG.png",
+      "type": "TextureImage",
+      "Texture": {
+        "idResource": "TextureImage|2022-10-11T18:52:15.921Z|24382",
+        "name": "te_Background",
+        "mipmap": "CRISP"
+      }
+    }
+  },
+  "Material|2022-10-11T18:53:14.843Z|29135": {
+    "ƒ.Material": {
+      "name": "mat_Background",
+      "idResource": "Material|2022-10-11T18:53:14.843Z|29135",
+      "shader": "ShaderLitTextured",
+      "coat": {
+        "ƒ.CoatTextured": {
+          "color": "[1, 1, 1, 1]",
+          "idTexture": "TextureImage|2022-10-11T18:52:15.921Z|24382"
+        }
+      }
     }
   }
 }
