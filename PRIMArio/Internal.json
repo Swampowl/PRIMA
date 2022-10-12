@@ -53,6 +53,102 @@
       }
     }
   },
+  "Material|2022-10-11T18:02:58.752Z|87596": {
+    "ƒ.Material": {
+      "name": "mat_Ground_Left",
+      "idResource": "Material|2022-10-11T18:02:58.752Z|87596",
+      "shader": "ShaderLitTextured",
+      "coat": {
+        "ƒ.CoatTextured": {
+          "color": "[1, 1, 1, 1]",
+          "idTexture": "TextureImage|2022-10-11T18:10:34.730Z|12660"
+        }
+      }
+    }
+  },
+  "TextureImage|2022-10-11T18:10:34.730Z|12660": {
+    "ƒ.TextureImage": {
+      "url": "Images\\Tiles\\11.png",
+      "type": "TextureImage",
+      "Texture": {
+        "idResource": "TextureImage|2022-10-11T18:10:34.730Z|12660",
+        "name": "te_Ground_Standard_Left",
+        "mipmap": "CRISP"
+      }
+    }
+  },
+  "Material|2022-10-11T17:39:55.927Z|22327": {
+    "ƒ.Material": {
+      "name": "mat_Ground_Standard",
+      "idResource": "Material|2022-10-11T17:39:55.927Z|22327",
+      "shader": "ShaderLitTextured",
+      "coat": {
+        "ƒ.CoatTextured": {
+          "color": "[1, 1, 1, 1]",
+          "idTexture": "TextureImage|2022-10-11T17:46:37.396Z|59132"
+        }
+      }
+    }
+  },
+  "TextureImage|2022-10-11T17:46:37.396Z|59132": {
+    "ƒ.TextureImage": {
+      "url": "Images\\Tiles\\2.png",
+      "type": "TextureImage",
+      "Texture": {
+        "idResource": "TextureImage|2022-10-11T17:46:37.396Z|59132",
+        "name": "te_Ground_Standard",
+        "mipmap": "CRISP"
+      }
+    }
+  },
+  "Material|2022-10-11T18:04:40.186Z|83003": {
+    "ƒ.Material": {
+      "name": "mat_Ground_Right",
+      "idResource": "Material|2022-10-11T18:04:40.186Z|83003",
+      "shader": "ShaderLitTextured",
+      "coat": {
+        "ƒ.CoatTextured": {
+          "color": "[1, 1, 1, 1]",
+          "idTexture": "TextureImage|2022-10-11T18:12:56.730Z|34897"
+        }
+      }
+    }
+  },
+  "TextureImage|2022-10-11T18:12:56.730Z|34897": {
+    "ƒ.TextureImage": {
+      "url": "Images\\Tiles\\7.png",
+      "type": "TextureImage",
+      "Texture": {
+        "idResource": "TextureImage|2022-10-11T18:12:56.730Z|34897",
+        "name": "te_Ground_Right",
+        "mipmap": "CRISP"
+      }
+    }
+  },
+  "Material|2022-10-11T18:06:07.952Z|67012": {
+    "ƒ.Material": {
+      "name": "mat_water",
+      "idResource": "Material|2022-10-11T18:06:07.952Z|67012",
+      "shader": "ShaderLitTextured",
+      "coat": {
+        "ƒ.CoatTextured": {
+          "color": "[1, 1, 1, 1]",
+          "idTexture": "TextureImage|2022-10-11T18:06:14.415Z|95201"
+        }
+      }
+    }
+  },
+  "TextureImage|2022-10-11T18:06:14.415Z|95201": {
+    "ƒ.TextureImage": {
+      "url": "Images\\Tiles\\17.png",
+      "type": "TextureImage",
+      "Texture": {
+        "idResource": "TextureImage|2022-10-11T18:06:14.415Z|95201",
+        "name": "te_water",
+        "mipmap": "CRISP"
+      }
+    }
+  },
   "Graph|2022-10-11T17:36:42.106Z|99743": {
     "ƒ.Graph": {
       "name": "LevelOne",
@@ -659,78 +755,6 @@
       "type": "Graph"
     }
   },
-  "Material|2022-10-11T17:39:55.927Z|22327": {
-    "ƒ.Material": {
-      "name": "mat_Ground_Standard",
-      "idResource": "Material|2022-10-11T17:39:55.927Z|22327",
-      "shader": "ShaderLitTextured",
-      "coat": {
-        "ƒ.CoatTextured": {
-          "color": "[1, 1, 1, 1]",
-          "idTexture": "TextureImage|2022-10-11T17:46:37.396Z|59132"
-        }
-      }
-    }
-  },
-  "TextureImage|2022-10-11T17:46:37.396Z|59132": {
-    "ƒ.TextureImage": {
-      "url": "Images\\Tiles\\2.png",
-      "type": "TextureImage",
-      "Texture": {
-        "idResource": "TextureImage|2022-10-11T17:46:37.396Z|59132",
-        "name": "te_Ground_Standard",
-        "mipmap": "CRISP"
-      }
-    }
-  },
-  "Material|2022-10-11T18:02:58.752Z|87596": {
-    "ƒ.Material": {
-      "name": "mat_Ground_Left",
-      "idResource": "Material|2022-10-11T18:02:58.752Z|87596",
-      "shader": "ShaderLitTextured",
-      "coat": {
-        "ƒ.CoatTextured": {
-          "color": "[1, 1, 1, 1]",
-          "idTexture": "TextureImage|2022-10-11T18:10:34.730Z|12660"
-        }
-      }
-    }
-  },
-  "TextureImage|2022-10-11T18:10:34.730Z|12660": {
-    "ƒ.TextureImage": {
-      "url": "Images\\Tiles\\11.png",
-      "type": "TextureImage",
-      "Texture": {
-        "idResource": "TextureImage|2022-10-11T18:10:34.730Z|12660",
-        "name": "te_Ground_Standard_Left",
-        "mipmap": "CRISP"
-      }
-    }
-  },
-  "Material|2022-10-11T18:04:40.186Z|83003": {
-    "ƒ.Material": {
-      "name": "mat_Ground_Right",
-      "idResource": "Material|2022-10-11T18:04:40.186Z|83003",
-      "shader": "ShaderLitTextured",
-      "coat": {
-        "ƒ.CoatTextured": {
-          "color": "[1, 1, 1, 1]",
-          "idTexture": "TextureImage|2022-10-11T18:12:56.730Z|34897"
-        }
-      }
-    }
-  },
-  "TextureImage|2022-10-11T18:12:56.730Z|34897": {
-    "ƒ.TextureImage": {
-      "url": "Images\\Tiles\\7.png",
-      "type": "TextureImage",
-      "Texture": {
-        "idResource": "TextureImage|2022-10-11T18:12:56.730Z|34897",
-        "name": "te_Ground_Right",
-        "mipmap": "CRISP"
-      }
-    }
-  },
   "Graph|2022-10-11T17:38:52.358Z|48185": {
     "ƒ.Graph": {
       "name": "Ground",
@@ -983,68 +1007,13 @@
       "type": "Graph"
     }
   },
-  "Material|2022-10-11T18:06:07.952Z|67012": {
-    "ƒ.Material": {
-      "name": "mat_water",
-      "idResource": "Material|2022-10-11T18:06:07.952Z|67012",
-      "shader": "ShaderLitTextured",
-      "coat": {
-        "ƒ.CoatTextured": {
-          "color": "[1, 1, 1, 1]",
-          "idTexture": "TextureImage|2022-10-11T18:06:14.415Z|95201"
-        }
-      }
-    }
-  },
-  "TextureImage|2022-10-11T18:06:14.415Z|95201": {
-    "ƒ.TextureImage": {
-      "url": "Images\\Tiles\\17.png",
-      "type": "TextureImage",
-      "Texture": {
-        "idResource": "TextureImage|2022-10-11T18:06:14.415Z|95201",
-        "name": "te_water",
-        "mipmap": "CRISP"
-      }
-    }
-  },
   "Graph|2022-10-11T18:08:42.577Z|50385": {
     "ƒ.Graph": {
       "name": "water",
       "active": true,
       "components": {
-        "ComponentMesh": [
-          {
-            "ƒ.ComponentMesh": {
-              "idMesh": "MeshQuad|2022-10-11T17:38:38.801Z|95514",
-              "pivot": {
-                "translation": "[5, 0, 0]",
-                "rotation": "[0, 0, 0]",
-                "scaling": "[1, 1, 1]"
-              },
-              "Component": {
-                "active": true
-              }
-            }
-          }
-        ],
-        "ComponentMaterial": [
-          {
-            "ƒ.ComponentMaterial": {
-              "sortForAlpha": false,
-              "clrPrimary": "[1, 1, 1, 1]",
-              "clrSecondary": "[1, 1, 1, 1]",
-              "pivot": {
-                "translation": "[0, 0]",
-                "rotation": 0,
-                "scaling": "[1, 1]"
-              },
-              "Component": {
-                "active": true
-              },
-              "idMaterial": "Material|2022-10-11T18:06:07.952Z|67012"
-            }
-          }
-        ]
+        "ComponentMesh": [],
+        "ComponentMaterial": []
       },
       "children": [],
       "idResource": "Graph|2022-10-11T18:08:42.577Z|50385",
