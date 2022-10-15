@@ -1,16 +1,18 @@
 namespace Script {
   import ƒ = FudgeCore;
   import ƒAid = FudgeAid;
-
-
   ƒ.Debug.info("Main Program Template running!");
 
   let viewport: ƒ.Viewport;
   let marioPos : ƒ.Node;
-  let spriteNode : ƒAid.NodeSprite;
-  document.addEventListener("interactiveViewportStarted", <EventListener>start);
+  let marioSpriteNode : ƒAid.NodeSprite;
 
-  function start(_event: CustomEvent): void {
+//loader
+
+  document.addEventListener("interactiveViewportStarted", <EventListener><unknown>start);
+
+
+  async function start(_event: CustomEvent): Promise <void> {
     viewport = _event.detail;
 
     ƒ.Loop.addEventListener(ƒ.EVENT.LOOP_FRAME, update);
@@ -19,8 +21,13 @@ namespace Script {
      let branch: ƒ.Node = viewport.getBranch();
      console.log(branch);
      marioPos = branch.getChildrenByName("Mario")[0];
+     marioSpriteNode = await createWalkRightAnimation();
+     marioPos.addChild(marioSpriteNode);
+     marioPos.getComponent(ƒ.ComponentMaterial).activate(false);
+     ƒ.Loop.addEventListener(ƒ.EVENT.LOOP_FRAME, update);
+     ƒ.Loop.start(ƒ.LOOP_MODE.TIME_GAME, 10);
      console.log(marioPos);
-    ƒ.Loop.start();
+    ƒ.Loop.start;
 
 }
 
@@ -33,24 +40,48 @@ namespace Script {
   
   }
 
-  async function walkRight(){
-    let root: ƒ.Node = new ƒ.Node("root");
 
+  
+
+  async function createWalkRightAnimation(): Promise<ƒAid.NodeSprite>{
+    
     let imgSpriteSheet: ƒ.TextureImage = new ƒ.TextureImage();
-    await imgSpriteSheet.load("Images\\Mario\\Mario_Walk.png");
+    await imgSpriteSheet.load("Images/Mario/Mario_Walk.png");
     let coat: ƒ.CoatTextured = new ƒ.CoatTextured(undefined, imgSpriteSheet);
 
-    let animation: ƒAid.SpriteSheetAnimation = new ƒAid.SpriteSheetAnimation("WalkRight", coat);
-    animation.generateByGrid(ƒ.Rectangle.GET(1, 0, 17, 60), 8, 22, ƒ.ORIGIN2D.BOTTOMCENTER, ƒ.Vector2.X(20));
+    let marioAnimation: ƒAid.SpriteSheetAnimation = new ƒAid.SpriteSheetAnimation("WalkRight", coat);
+    marioAnimation.generateByGrid(ƒ.Rectangle.GET(247, 1, 15, 28 ), 3, 30, ƒ.ORIGIN2D.BOTTOMCENTER, ƒ.Vector2.X(14));
 
-    spriteNode = new ƒAid.NodeSprite("Sprite");
-    spriteNode.addComponent(new ƒ.ComponentTransform(new ƒ.Matrix4x4()));
-    spriteNode.setAnimation(animation);
-    spriteNode.setFrameDirection(1);
-    spriteNode.mtxLocal.translateY(-1);
-    spriteNode.framerate = parseInt((<HTMLInputElement>document.querySelector("[name=fps]")).value);
+    marioSpriteNode = new ƒAid.NodeSprite("marioSprite");
 
 
-    root.addChild(spriteNode);
+    marioSpriteNode.addComponent(new ƒ.ComponentTransform(new ƒ.Matrix4x4()));
+    marioSpriteNode.setAnimation(marioAnimation);
+
+    marioSpriteNode.setFrameDirection(1);
+    marioSpriteNode.mtxLocal.translateY(0.5);
+    marioSpriteNode.framerate = 4;
+    return marioSpriteNode;
   }
+ /* async function createWalkLeftAnimation(): Promise<ƒAid.NodeSprite>{
+    
+    let imgSpriteSheet: ƒ.TextureImage = new ƒ.TextureImage();
+    await imgSpriteSheet.load("Images/Mario/Mario_Walk.png");
+    let coat: ƒ.CoatTextured = new ƒ.CoatTextured(undefined, imgSpriteSheet);
+
+    let marioAnimation: ƒAid.SpriteSheetAnimation = new ƒAid.SpriteSheetAnimation("WalkLeft", coat);
+    marioAnimation.generateByGrid(ƒ.Rectangle.GET(-158, -1, 15, 28 ), 3, 30, ƒ.ORIGIN2D.BOTTOMCENTER, ƒ.Vector2.X(-28));
+
+    marioSpriteNode = new ƒAid.NodeSprite("marioSprite");
+
+
+    marioSpriteNode.addComponent(new ƒ.ComponentTransform(new ƒ.Matrix4x4()));
+    marioSpriteNode.setAnimation(marioAnimation);
+
+    marioSpriteNode.setFrameDirection(1);
+    marioSpriteNode.mtxLocal.translateY(0.5);
+    marioSpriteNode.framerate = 4;
+    return marioSpriteNode;
+  }
+*/
 }
