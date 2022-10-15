@@ -37,8 +37,19 @@
       "coat": {
         "ƒ.CoatTextured": {
           "color": "[1, 1, 1, 1]",
-          "idTexture": "TextureImage|2022-10-12T12:22:49.817Z|45253"
+          "idTexture": "TextureImage|2022-10-15T10:34:18.669Z|87483"
         }
+      }
+    }
+  },
+  "TextureImage|2022-10-15T10:34:18.669Z|87483": {
+    "ƒ.TextureImage": {
+      "url": "Images\\Mario\\Mario_Walk.png",
+      "type": "TextureImage",
+      "Texture": {
+        "idResource": "TextureImage|2022-10-15T10:34:18.669Z|87483",
+        "name": "te_Mario_Walk.png",
+        "mipmap": "CRISP"
       }
     }
   },
@@ -360,9 +371,9 @@
                     "clrPrimary": "[1, 1, 1, 1]",
                     "clrSecondary": "[1, 1, 1, 1]",
                     "pivot": {
-                      "translation": "[0.5390000939369202, 0]",
+                      "translation": "[0.690000057220459, 0]",
                       "rotation": 0,
-                      "scaling": "[0.03800000622868538, 0.08300000429153442]"
+                      "scaling": "[0.036000244319438934, 0.9700000286102295]"
                     },
                     "Component": {
                       "active": true

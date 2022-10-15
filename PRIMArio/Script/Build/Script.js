@@ -39,9 +39,11 @@ var Script;
 var Script;
 (function (Script) {
     var ƒ = FudgeCore;
+    var ƒAid = FudgeAid;
     ƒ.Debug.info("Main Program Template running!");
     let viewport;
     let marioPos;
+    let spriteNode;
     document.addEventListener("interactiveViewportStarted", start);
     function start(_event) {
         viewport = _event.detail;
@@ -60,6 +62,21 @@ var Script;
         ƒ.AudioManager.default.update();
         console.log("Update");
         marioPos.mtxLocal.translateX(0.05);
+    }
+    async function walkRight() {
+        let root = new ƒ.Node("root");
+        let imgSpriteSheet = new ƒ.TextureImage();
+        await imgSpriteSheet.load("Images\\Mario\\Mario_Walk.png");
+        let coat = new ƒ.CoatTextured(undefined, imgSpriteSheet);
+        let animation = new ƒAid.SpriteSheetAnimation("WalkRight", coat);
+        animation.generateByGrid(ƒ.Rectangle.GET(1, 0, 17, 60), 8, 22, ƒ.ORIGIN2D.BOTTOMCENTER, ƒ.Vector2.X(20));
+        spriteNode = new ƒAid.NodeSprite("Sprite");
+        spriteNode.addComponent(new ƒ.ComponentTransform(new ƒ.Matrix4x4()));
+        spriteNode.setAnimation(animation);
+        spriteNode.setFrameDirection(1);
+        spriteNode.mtxLocal.translateY(-1);
+        spriteNode.framerate = parseInt(document.querySelector("[name=fps]").value);
+        root.addChild(spriteNode);
     }
 })(Script || (Script = {}));
 //# sourceMappingURL=Script.js.map
