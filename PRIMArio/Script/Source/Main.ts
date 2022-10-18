@@ -6,6 +6,7 @@ namespace Script {
   let viewport: ƒ.Viewport;
   let marioPos : ƒ.Node;
   let marioSpriteNode : ƒAid.NodeSprite;
+  let walkSpeed: number = 1.5;
 
 //loader
 
@@ -36,8 +37,17 @@ namespace Script {
     viewport.draw();
     ƒ.AudioManager.default.update();
     console.log("Update");
-    marioPos.mtxLocal.translateX(0.05);
+
+    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_RIGHT, ƒ.KEYBOARD_CODE.D ]))
+    marioPos.mtxLocal.translateX(walkSpeed*ƒ.Loop.timeFrameGame/1000);
+
+    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_LEFT, ƒ.KEYBOARD_CODE.A ]))
+    marioPos.mtxLocal.translateX(- walkSpeed*ƒ.Loop.timeFrameGame/1000);
+    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP, ƒ.KEYBOARD_CODE.W ]))
+    marioPos.mtxLocal.translateY(walkSpeed*ƒ.Loop.timeFrameGame/1000);
   
+if (ƒ.Keyboard.isPressedCombo([ƒ.KEYBOARD_CODE.ARROW_RIGHT, ƒ.KEYBOARD_CODE.SHIFT_LEFT ]))
+marioPos.mtxLocal.translateX(2*walkSpeed*ƒ.Loop.timeFrameGame/1000)
   }
 
 

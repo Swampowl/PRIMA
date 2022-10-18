@@ -44,6 +44,7 @@ var Script;
     let viewport;
     let marioPos;
     let marioSpriteNode;
+    let walkSpeed = 1.5;
     //loader
     document.addEventListener("interactiveViewportStarted", start);
     async function start(_event) {
@@ -67,7 +68,14 @@ var Script;
         viewport.draw();
         ƒ.AudioManager.default.update();
         console.log("Update");
-        marioPos.mtxLocal.translateX(0.05);
+        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_RIGHT, ƒ.KEYBOARD_CODE.D]))
+            marioPos.mtxLocal.translateX(walkSpeed * ƒ.Loop.timeFrameGame / 1000);
+        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_LEFT, ƒ.KEYBOARD_CODE.A]))
+            marioPos.mtxLocal.translateX(-walkSpeed * ƒ.Loop.timeFrameGame / 1000);
+        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP, ƒ.KEYBOARD_CODE.W]))
+            marioPos.mtxLocal.translateY(walkSpeed * ƒ.Loop.timeFrameGame / 1000);
+        if (ƒ.Keyboard.isPressedCombo([ƒ.KEYBOARD_CODE.ARROW_RIGHT, ƒ.KEYBOARD_CODE.SHIFT_LEFT]))
+            marioPos.mtxLocal.translateX(2 * walkSpeed * ƒ.Loop.timeFrameGame / 1000);
     }
     async function createWalkRightAnimation() {
         let imgSpriteSheet = new ƒ.TextureImage();
