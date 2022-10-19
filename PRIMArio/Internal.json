@@ -37,7 +37,7 @@
       "coat": {
         "ƒ.CoatTextured": {
           "color": "[1, 1, 1, 1]",
-          "idTexture": "TextureImage|2022-10-15T10:34:18.669Z|87483"
+          "idTexture": "TextureImage|2022-10-19T16:02:04.641Z|57026"
         }
       }
     }
@@ -354,9 +354,9 @@
                   "ƒ.ComponentMesh": {
                     "idMesh": "MeshQuad|2022-10-11T17:38:38.801Z|95514",
                     "pivot": {
-                      "translation": "[0, 1, 0]",
+                      "translation": "[0, 1.5000001192092896, 0]",
                       "rotation": "[0, 0, 0]",
-                      "scaling": "[1, 1, 1]"
+                      "scaling": "[1, 2, 1]"
                     },
                     "Component": {
                       "active": true
@@ -371,9 +371,9 @@
                     "clrPrimary": "[1, 1, 1, 1]",
                     "clrSecondary": "[1, 1, 1, 1]",
                     "pivot": {
-                      "translation": "[0.690000057220459, 0]",
+                      "translation": "[0.23900006711483002, 0]",
                       "rotation": 0,
-                      "scaling": "[0.036000244319438934, 0.9700000286102295]"
+                      "scaling": "[0.24000024795532227, 0.49999991059303284]"
                     },
                     "Component": {
                       "active": true
@@ -2366,6 +2366,17 @@
       "children": [],
       "idResource": "Graph|2022-10-12T12:23:04.426Z|27429",
       "type": "Graph"
+    }
+  },
+  "TextureImage|2022-10-19T16:02:04.641Z|57026": {
+    "ƒ.TextureImage": {
+      "url": "Images\\pngwing.com.png",
+      "type": "TextureImage",
+      "Texture": {
+        "idResource": "TextureImage|2022-10-19T16:02:04.641Z|57026",
+        "name": "te_mario_sprites",
+        "mipmap": "CRISP"
+      }
     }
   }
 }
