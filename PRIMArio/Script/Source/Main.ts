@@ -40,7 +40,7 @@ namespace Script {
     ƒ.Loop.start(ƒ.LOOP_MODE.TIME_GAME, 10);
     console.log(marioCharacter);
 
-    actionHandler(_event);
+    actionHandler();
   }
 
   function update(_event: Event): void {
@@ -107,7 +107,7 @@ marioCharacter.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(-ƒ.Loop.
     viewport.draw();
   }
 
-  async function actionHandler(_event: Event): Promise<void> {
+  async function actionHandler(): Promise<void> {
     let animWalk: ƒ.TextureImage = new ƒ.TextureImage();
     await animWalk.load("Images/Mario/pngwing.com.png");
     let walkAnimation: ƒ.CoatTextured = new ƒ.CoatTextured(undefined, animWalk);

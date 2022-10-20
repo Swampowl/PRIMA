@@ -66,7 +66,7 @@ var Script;
         ƒ.Loop.addEventListener("loopFrame" /* ƒ.EVENT.LOOP_FRAME */, update);
         ƒ.Loop.start(ƒ.LOOP_MODE.TIME_GAME, 10);
         console.log(marioCharacter);
-        actionHandler(_event);
+        actionHandler();
     }
     function update(_event) {
         // ƒ.Physics.simulate();  // if physics is included and used
@@ -117,7 +117,7 @@ var Script;
         }
         viewport.draw();
     }
-    async function actionHandler(_event) {
+    async function actionHandler() {
         let animWalk = new ƒ.TextureImage();
         await animWalk.load("Images/Mario/pngwing.com.png");
         let walkAnimation = new ƒ.CoatTextured(undefined, animWalk);
