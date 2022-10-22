@@ -11,6 +11,8 @@ namespace Script {
   let marioSpeed: number = 2.5;
   let directionRight: boolean = true;
   let isWalking: boolean = false;
+  let gravity: number = 0.1;
+  let ySpeed:number = 0.01;
 
   //loader
 
@@ -25,6 +27,7 @@ namespace Script {
 
   async function start(_event: CustomEvent): Promise<void> {
     viewport = _event.detail;
+
 
     ƒ.Loop.addEventListener(ƒ.EVENT.LOOP_FRAME, update);
 
@@ -47,29 +50,28 @@ namespace Script {
     // ƒ.Physics.simulate();  // if physics is included and used
     // ƒ.AudioManager.default.update();
     // ƒ.AudioManager.default.update();
-    console.log("Update");
+    createGravity();
 
-    if(ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.SHIFT_LEFT])){ 
-      marioSpeed = 10;
-      marioSpriteNode.framerate = 30;
-    }
+  
+
+ 
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.D, ƒ.KEYBOARD_CODE.ARROW_RIGHT])) {
-      if (!isWalking){
+      if (!isWalking) {
         marioSpriteNode.setAnimation(animWalkRight);
-        isWalking = true;   
-      }   
-      marioCharacter.getComponent(ƒ.ComponentTransform).mtxLocal.translateX(ƒ.Loop.timeFrameGame/1000 * marioSpeed);
+        isWalking = true;
+      }
+      marioCharacter.getComponent(ƒ.ComponentTransform).mtxLocal.translateX(ƒ.Loop.timeFrameGame / 1000 * marioSpeed);
       if (!directionRight) {
         marioSpriteNode.getComponent(ƒ.ComponentTransform).mtxLocal.rotateY(180);
         directionRight = true;
       }
     }
     else if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.A, ƒ.KEYBOARD_CODE.ARROW_LEFT])) {
-      if (!isWalking){
+      if (!isWalking) {
         marioSpriteNode.setAnimation(animWalkRight);
-        isWalking = true;   
+        isWalking = true;
       }
-      marioCharacter.mtxLocal.translateX(-ƒ.Loop.timeFrameGame/1000 * marioSpeed);
+      marioCharacter.mtxLocal.translateX(-ƒ.Loop.timeFrameGame / 1000 * marioSpeed);
       if (directionRight) {
         marioSpriteNode.getComponent(ƒ.ComponentTransform).mtxLocal.rotateY(180);
         directionRight = false;
@@ -79,31 +81,14 @@ namespace Script {
       isWalking = false;
       marioSpriteNode.setAnimation(animIdle);
     }
-    if (
-      ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP, ƒ.KEYBOARD_CODE.W]))
-{
-  marioSpriteNode.setAnimation(animJump);
-  marioCharacter.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(ƒ.Loop.timeFrameGame/1000 * marioSpeed);
+    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP, ƒ.KEYBOARD_CODE.W])) {
+        marioSpriteNode.setAnimation(animJump);
+      if (ySpeed == 0)
+      
+        ySpeed = 0.1      }
+    
 
 
-}
-
-    if (
-      ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP, ƒ.KEYBOARD_CODE.W]))
-{
-  marioSpriteNode.setAnimation(animJump);
-  marioCharacter.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(ƒ.Loop.timeFrameGame/1000 * marioSpeed);
-
-
-}
-if (
-  ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_DOWN, ƒ.KEYBOARD_CODE.S]))
-{
-marioSpriteNode.setAnimation(animJump);
-marioCharacter.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(-ƒ.Loop.timeFrameGame/1000 * marioSpeed);
-
-
-}
     viewport.draw();
   }
 
@@ -114,7 +99,8 @@ marioCharacter.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(-ƒ.Loop.
 
     animWalkRight = new ƒAid.SpriteSheetAnimation("walk", walkAnimation);
     animWalkRight.generateByGrid(
-      ƒ.Rectangle.GET(0, 0, 223, 445),
+      ƒ.Rectangle.GET(0,
+        0, 223, 445),
       3,
       300,
       ƒ.ORIGIN2D.BOTTOMCENTER,
@@ -128,7 +114,7 @@ marioCharacter.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(-ƒ.Loop.
     animIdle = new ƒAid.SpriteSheetAnimation("idle", idleAnimation);
     animIdle.generateByGrid(
       ƒ.Rectangle.GET(0, 0, 223, 445),
-      3,
+      1,
       300,
       ƒ.ORIGIN2D.BOTTOMCENTER,
       ƒ.Vector2.X(223)
@@ -156,4 +142,21 @@ marioCharacter.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(-ƒ.Loop.
     marioCharacter.removeAllChildren();
     marioCharacter.addChild(marioSpriteNode);
   }
+
+  function createGravity() {
+    let deltaTime: number = ƒ.Loop.timeFrameGame / 1000;
+    ySpeed -= gravity * deltaTime;
+    marioCharacter.mtxLocal.translateY(ySpeed);
+
+    let pos: ƒ.Vector3 = marioCharacter.mtxLocal.translation;
+    if (pos.y + ySpeed > 0) marioCharacter.mtxLocal.translateY(ySpeed);
+    else {
+      ySpeed = 0;
+      pos.y = 0;
+      marioCharacter.mtxLocal.translation = pos;
+    }
+  }
+
+
+
 }

@@ -48,6 +48,8 @@ var Script;
     let marioSpeed = 2.5;
     let directionRight = true;
     let isWalking = false;
+    let gravity = 0.1;
+    let ySpeed = 0.01;
     //loader
     document.addEventListener("interactiveViewportStarted", start);
     let animIdle;
@@ -72,11 +74,7 @@ var Script;
         // ƒ.Physics.simulate();  // if physics is included and used
         // ƒ.AudioManager.default.update();
         // ƒ.AudioManager.default.update();
-        console.log("Update");
-        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.SHIFT_LEFT])) {
-            marioSpeed = 10;
-            marioSpriteNode.framerate = 30;
-        }
+        createGravity();
         if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.D, ƒ.KEYBOARD_CODE.ARROW_RIGHT])) {
             if (!isWalking) {
                 marioSpriteNode.setAnimation(animWalkRight);
@@ -105,15 +103,8 @@ var Script;
         }
         if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP, ƒ.KEYBOARD_CODE.W])) {
             marioSpriteNode.setAnimation(animJump);
-            marioCharacter.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(ƒ.Loop.timeFrameGame / 1000 * marioSpeed);
-        }
-        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP, ƒ.KEYBOARD_CODE.W])) {
-            marioSpriteNode.setAnimation(animJump);
-            marioCharacter.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(ƒ.Loop.timeFrameGame / 1000 * marioSpeed);
-        }
-        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_DOWN, ƒ.KEYBOARD_CODE.S])) {
-            marioSpriteNode.setAnimation(animJump);
-            marioCharacter.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(-ƒ.Loop.timeFrameGame / 1000 * marioSpeed);
+            if (ySpeed == 0)
+                ySpeed = 0.1;
         }
         viewport.draw();
     }
@@ -127,7 +118,7 @@ var Script;
         await imgIdle.load("Images/Mario/pngwing.com.png");
         let idleAnimation = new ƒ.CoatTextured(undefined, imgIdle);
         animIdle = new ƒAid.SpriteSheetAnimation("idle", idleAnimation);
-        animIdle.generateByGrid(ƒ.Rectangle.GET(0, 0, 223, 445), 3, 300, ƒ.ORIGIN2D.BOTTOMCENTER, ƒ.Vector2.X(223));
+        animIdle.generateByGrid(ƒ.Rectangle.GET(0, 0, 223, 445), 1, 300, ƒ.ORIGIN2D.BOTTOMCENTER, ƒ.Vector2.X(223));
         let imgJump = new ƒ.TextureImage();
         await imgJump.load("Images/Mario/pngwing.com.png");
         let jumpAnimation = new ƒ.CoatTextured(undefined, imgJump);
@@ -141,6 +132,19 @@ var Script;
         marioSpriteNode.framerate = 15;
         marioCharacter.removeAllChildren();
         marioCharacter.addChild(marioSpriteNode);
+    }
+    function createGravity() {
+        let deltaTime = ƒ.Loop.timeFrameGame / 1000;
+        ySpeed -= gravity * deltaTime;
+        marioCharacter.mtxLocal.translateY(ySpeed);
+        let pos = marioCharacter.mtxLocal.translation;
+        if (pos.y + ySpeed > 0)
+            marioCharacter.mtxLocal.translateY(ySpeed);
+        else {
+            ySpeed = 0;
+            pos.y = 0;
+            marioCharacter.mtxLocal.translation = pos;
+        }
     }
 })(Script || (Script = {}));
 //# sourceMappingURL=Script.js.map
