@@ -14,6 +14,7 @@ namespace Script {
   let gravity: number = 0.1;
   let ySpeed:number = 0.01;
 
+
   //loader
 
   document.addEventListener(
@@ -23,7 +24,7 @@ namespace Script {
 
   let animIdle: ƒAid.SpriteSheetAnimation;
   let animJump: ƒAid.SpriteSheetAnimation;
-  let animWalkRight: ƒAid.SpriteSheetAnimation;
+  let animWalk: ƒAid.SpriteSheetAnimation;
 
   async function start(_event: CustomEvent): Promise<void> {
     viewport = _event.detail;
@@ -39,25 +40,42 @@ namespace Script {
     console.log(branch);
     marioCharacter = branch.getChildrenByName("Mario")[0];
     marioCharacter.getComponent(ƒ.ComponentMaterial).activate(false);
+   await  actionHandler();
     ƒ.Loop.addEventListener(ƒ.EVENT.LOOP_FRAME, update);
     ƒ.Loop.start(ƒ.LOOP_MODE.TIME_GAME, 10);
     console.log(marioCharacter);
 
-    actionHandler();
+ 
   }
 
   function update(_event: Event): void {
     // ƒ.Physics.simulate();  // if physics is included and used
-    // ƒ.AudioManager.default.update();
+    // ƒ.AudioManager.default.updste();
     // ƒ.AudioManager.default.update();
     createGravity();
+    movement();
+   // console.log(posCurrentY);
+    viewport.draw();
+  }
 
-  
+  function movement (){
 
- 
+    if  ( !ƒ.Keyboard.isPressedOne([
+      ƒ.KEYBOARD_CODE.D,
+      ƒ.KEYBOARD_CODE.S,
+      ƒ.KEYBOARD_CODE.W,
+      ƒ.KEYBOARD_CODE.A,
+      ƒ.KEYBOARD_CODE.ARROW_DOWN,
+      ƒ.KEYBOARD_CODE.ARROW_LEFT,
+      ƒ.KEYBOARD_CODE.ARROW_RIGHT,
+      ƒ.KEYBOARD_CODE.ARROW_UP,
+    ])){
+    marioSpriteNode.setAnimation(animIdle);
+    }
+
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.D, ƒ.KEYBOARD_CODE.ARROW_RIGHT])) {
-      if (!isWalking) {
-        marioSpriteNode.setAnimation(animWalkRight);
+      if (!isWalking && ySpeed == 0) {
+        marioSpriteNode.setAnimation(animWalk)
         isWalking = true;
       }
       marioCharacter.getComponent(ƒ.ComponentTransform).mtxLocal.translateX(ƒ.Loop.timeFrameGame / 1000 * marioSpeed);
@@ -68,7 +86,7 @@ namespace Script {
     }
     else if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.A, ƒ.KEYBOARD_CODE.ARROW_LEFT])) {
       if (!isWalking) {
-        marioSpriteNode.setAnimation(animWalkRight);
+        marioSpriteNode.setAnimation(animWalk);
         isWalking = true;
       }
       marioCharacter.mtxLocal.translateX(-ƒ.Loop.timeFrameGame / 1000 * marioSpeed);
@@ -78,27 +96,31 @@ namespace Script {
       }
     }
     else {
-      isWalking = false;
-      marioSpriteNode.setAnimation(animIdle);
-    }
-    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP, ƒ.KEYBOARD_CODE.W])) {
+      if (ySpeed != 0){
         marioSpriteNode.setAnimation(animJump);
-      if (ySpeed == 0)
-      
-        ySpeed = 0.1      }
-    
+       }
+      else {
+        isWalking = false;
+      }
+    }
+    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP, ƒ.KEYBOARD_CODE.W])) 
+    {      if (ySpeed == 0){
+             ySpeed = 0.1   }
 
+             if (ySpeed != 0){
+              marioSpriteNode.setAnimation(animJump);
+             }
+    }
 
-    viewport.draw();
   }
 
   async function actionHandler(): Promise<void> {
-    let animWalk: ƒ.TextureImage = new ƒ.TextureImage();
-    await animWalk.load("Images/Mario/pngwing.com.png");
-    let walkAnimation: ƒ.CoatTextured = new ƒ.CoatTextured(undefined, animWalk);
+    let imgWalk: ƒ.TextureImage = new ƒ.TextureImage();
+    await imgWalk.load("Images/Mario/pngwing.com.png");
+    let walkAnimation: ƒ.CoatTextured = new ƒ.CoatTextured(undefined, imgWalk);
 
-    animWalkRight = new ƒAid.SpriteSheetAnimation("walk", walkAnimation);
-    animWalkRight.generateByGrid(
+    animWalk = new ƒAid.SpriteSheetAnimation("walk", walkAnimation);
+    animWalk.generateByGrid(
       ƒ.Rectangle.GET(0,
         0, 223, 445),
       3,
@@ -127,10 +149,10 @@ namespace Script {
     animJump = new ƒAid.SpriteSheetAnimation("idle", jumpAnimation);
     animJump.generateByGrid(
       ƒ.Rectangle.GET(0, 446, 223, 445),
-      3,
+      1,
       300,
       ƒ.ORIGIN2D.BOTTOMCENTER,
-      ƒ.Vector2.X(223)
+      ƒ.Vector2.X(0)
     );
 
     marioSpriteNode = new ƒAid.NodeSprite("Mario");
@@ -150,6 +172,8 @@ namespace Script {
 
     let pos: ƒ.Vector3 = marioCharacter.mtxLocal.translation;
     if (pos.y + ySpeed > 0) marioCharacter.mtxLocal.translateY(ySpeed);
+  
+  
     else {
       ySpeed = 0;
       pos.y = 0;
