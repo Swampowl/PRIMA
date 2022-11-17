@@ -1,4 +1,14 @@
 "use strict";
+var PRIMArio;
+(function (PRIMArio) {
+    class Avatar extends ƒAid.NodeSprite {
+        constructor() {
+            super("Mario");
+            this.addComponent(new ƒ.ComponentTransform());
+        }
+    }
+    PRIMArio.Avatar = Avatar;
+})(PRIMArio || (PRIMArio = {}));
 var Script;
 (function (Script) {
     var ƒ = FudgeCore;
@@ -36,11 +46,12 @@ var Script;
     }
     Script.CustomComponentScript = CustomComponentScript;
 })(Script || (Script = {}));
-var Script;
-(function (Script) {
+var PRIMArio;
+(function (PRIMArio) {
     var ƒ = FudgeCore;
     var ƒAid = FudgeAid;
     ƒ.Debug.info("Main Program Template running!");
+    let branch;
     let viewport;
     //Mario
     let marioCharacter;
@@ -48,8 +59,8 @@ var Script;
     let marioSpeed = 2.5;
     let directionRight = true;
     let isWalking = false;
-    let gravity = 0.1;
-    let ySpeed = 0.01;
+    let gravity = 5;
+    let ySpeed = 1;
     //loader
     document.addEventListener("interactiveViewportStarted", start);
     let animIdle;
@@ -61,7 +72,7 @@ var Script;
         // start the game loop to continously draw the viewport, update the audiosystem and drive the physics i/a
         ƒ.Loop.start;
         console.log(viewport);
-        let branch = viewport.getBranch();
+        branch = viewport.getBranch();
         console.log(branch);
         marioCharacter = branch.getChildrenByName("Mario")[0];
         marioCharacter.getComponent(ƒ.ComponentMaterial).activate(false);
@@ -75,7 +86,9 @@ var Script;
         // ƒ.AudioManager.default.updste();
         // ƒ.AudioManager.default.update();
         createGravity();
+        if (checkGrounded) { }
         movement();
+        checkGrounded();
         // console.log(posCurrentY);
         viewport.draw();
     }
@@ -158,16 +171,24 @@ var Script;
     }
     function createGravity() {
         let deltaTime = ƒ.Loop.timeFrameGame / 1000;
+        ySpeed <= -5 ? (ySpeed = -5) : "";
         ySpeed -= gravity * deltaTime;
-        marioCharacter.mtxLocal.translateY(ySpeed);
+        let yOffset = ySpeed * deltaTime;
+        marioCharacter.mtxLocal.translateY(yOffset);
+    }
+    function checkGrounded() {
+        let blocks = branch.getChildrenByName("Ground")[0];
         let pos = marioCharacter.mtxLocal.translation;
-        if (pos.y + ySpeed > 0)
-            marioCharacter.mtxLocal.translateY(ySpeed);
-        else {
-            ySpeed = 0;
-            pos.y = 0;
-            marioCharacter.mtxLocal.translation = pos;
+        for (let block of blocks.getChildrenByName("GroundTile_5")) {
+            let posBlock = block.mtxLocal.translation;
+            if ((pos.x - posBlock.x) < 0.5) {
+                if (pos.y < posBlock.y + 0.5) {
+                    pos.y = posBlock.y;
+                    marioCharacter.mtxLocal.translation = pos;
+                    ySpeed = 0;
+                }
+            }
         }
     }
-})(Script || (Script = {}));
+})(PRIMArio || (PRIMArio = {}));
 //# sourceMappingURL=Script.js.map

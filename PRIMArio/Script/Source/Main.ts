@@ -1,8 +1,8 @@
-namespace Script {
+namespace PRIMArio {
   import ƒ = FudgeCore;
   import ƒAid = FudgeAid;
   ƒ.Debug.info("Main Program Template running!");
-
+  let branch: ƒ.Node;
   let viewport: ƒ.Viewport;
 
   //Mario
@@ -11,12 +11,11 @@ namespace Script {
   let marioSpeed: number = 2.5;
   let directionRight: boolean = true;
   let isWalking: boolean = false;
-  let gravity: number = 0.1;
-  let ySpeed:number = 0.01;
+  let gravity: number = 5;
+  let ySpeed:number = 1;
 
 
   //loader
-
   document.addEventListener(
     "interactiveViewportStarted",
     <EventListener>(<unknown>start)
@@ -35,7 +34,7 @@ namespace Script {
     // start the game loop to continously draw the viewport, update the audiosystem and drive the physics i/a
     ƒ.Loop.start;
     console.log(viewport);
-    let branch: ƒ.Node = viewport.getBranch();
+    branch = viewport.getBranch();
 
     console.log(branch);
     marioCharacter = branch.getChildrenByName("Mario")[0];
@@ -53,7 +52,9 @@ namespace Script {
     // ƒ.AudioManager.default.updste();
     // ƒ.AudioManager.default.update();
     createGravity();
+    if (checkGrounded){}
     movement();
+    checkGrounded();
    // console.log(posCurrentY);
     viewport.draw();
   }
@@ -167,20 +168,26 @@ namespace Script {
 
   function createGravity() {
     let deltaTime: number = ƒ.Loop.timeFrameGame / 1000;
+    ySpeed <= -5 ? (ySpeed = -5) : "";
     ySpeed -= gravity * deltaTime;
-    marioCharacter.mtxLocal.translateY(ySpeed);
-
-    let pos: ƒ.Vector3 = marioCharacter.mtxLocal.translation;
-    if (pos.y + ySpeed > 0) marioCharacter.mtxLocal.translateY(ySpeed);
-  
-  
-    else {
-      ySpeed = 0;
-      pos.y = 0;
-      marioCharacter.mtxLocal.translation = pos;
-    }
+    let yOffset: number = ySpeed * deltaTime;
+    marioCharacter.mtxLocal.translateY(yOffset);
   }
 
+  function checkGrounded(): void {
+    let blocks: ƒ.Node = branch.getChildrenByName("Ground")[0];
+    let pos: ƒ.Vector3 = marioCharacter.mtxLocal.translation;
+    for (let block of blocks.getChildrenByName("GroundTile_5")) {
+      let posBlock: ƒ.Vector3 = block.mtxLocal.translation;
+      if ((pos.x - posBlock.x) < 0.5) {
+        if (pos.y < posBlock.y + 0.5) {
+          pos.y = posBlock.y;
+          marioCharacter.mtxLocal.translation = pos;
+          ySpeed = 0;
+        }
+      }
+    }
+  }
 
 
 }

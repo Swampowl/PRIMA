@@ -1,3 +1,8 @@
+declare namespace PRIMArio {
+    class Avatar extends ƒAid.NodeSprite {
+        constructor();
+    }
+}
 declare namespace Script {
     import ƒ = FudgeCore;
     class CustomComponentScript extends ƒ.ComponentScript {
@@ -7,5 +12,5 @@ declare namespace Script {
         hndEvent: (_event: Event) => void;
     }
 }
-declare namespace Script {
+declare namespace PRIMArio {
 }
