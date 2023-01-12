@@ -5,20 +5,9 @@
       "name": "mesh_background"
     }
   },
-  "TextureImage|2023-01-10T18:40:09.159Z|76085": {
-    "ƒ.TextureImage": {
-      "url": "Images\\background.png",
-      "type": "TextureImage",
-      "Texture": {
-        "idResource": "TextureImage|2023-01-10T18:40:09.159Z|76085",
-        "name": "img_background",
-        "mipmap": "CRISP"
-      }
-    }
-  },
   "Material|2023-01-10T18:46:14.401Z|59847": {
     "ƒ.Material": {
-      "name": "tex_ground",
+      "name": "mat_ground",
       "idResource": "Material|2023-01-10T18:46:14.401Z|59847",
       "shader": "ShaderFlatTextured",
       "coat": {
@@ -50,8 +39,19 @@
       "coat": {
         "ƒ.CoatTextured": {
           "color": "[1, 1, 1, 1]",
-          "idTexture": "TextureImage|2023-01-10T18:40:09.159Z|76085"
+          "idTexture": "TextureImage|2023-01-12T15:06:42.936Z|67804"
         }
+      }
+    }
+  },
+  "TextureImage|2023-01-12T15:06:42.936Z|67804": {
+    "ƒ.TextureImage": {
+      "url": "Images\\back.png",
+      "type": "TextureImage",
+      "Texture": {
+        "idResource": "TextureImage|2023-01-12T15:06:42.936Z|67804",
+        "name": "Images\\back.png",
+        "mipmap": "CRISP"
       }
     }
   },
@@ -94,6 +94,36 @@
       "Texture": {
         "idResource": "TextureImage|2023-01-11T23:15:56.263Z|95273",
         "name": "img_net.png",
+        "mipmap": "CRISP"
+      }
+    }
+  },
+  "MeshQuad|2023-01-12T13:56:26.385Z|54139": {
+    "ƒ.MeshQuad": {
+      "idResource": "MeshQuad|2023-01-12T13:56:26.385Z|54139",
+      "name": "mesh_ball"
+    }
+  },
+  "Material|2023-01-12T13:56:39.975Z|15831": {
+    "ƒ.Material": {
+      "name": "mat_ball",
+      "idResource": "Material|2023-01-12T13:56:39.975Z|15831",
+      "shader": "ShaderLitTextured",
+      "coat": {
+        "ƒ.CoatTextured": {
+          "color": "[1, 1, 1, 1]",
+          "idTexture": "TextureImage|2023-01-12T13:57:07.520Z|54364"
+        }
+      }
+    }
+  },
+  "TextureImage|2023-01-12T13:57:07.520Z|54364": {
+    "ƒ.TextureImage": {
+      "url": "Images\\ball.png",
+      "type": "TextureImage",
+      "Texture": {
+        "idResource": "TextureImage|2023-01-12T13:57:07.520Z|54364",
+        "name": "img_ball.png",
         "mipmap": "CRISP"
       }
     }
@@ -381,9 +411,7 @@
                     "idMaterial": "Material|2023-01-12T13:24:30.413Z|67576"
                   }
                 }
-              ],
-              "ComponentTransform": [],
-              "ComponentRigidbody": []
+              ]
             },
             "children": []
           }
@@ -433,36 +461,6 @@
       ],
       "idResource": "Graph|2023-01-10T19:14:25.382Z|48070",
       "type": "Graph"
-    }
-  },
-  "MeshQuad|2023-01-12T13:56:26.385Z|54139": {
-    "ƒ.MeshQuad": {
-      "idResource": "MeshQuad|2023-01-12T13:56:26.385Z|54139",
-      "name": "mesh_ball"
-    }
-  },
-  "Material|2023-01-12T13:56:39.975Z|15831": {
-    "ƒ.Material": {
-      "name": "mat_ball",
-      "idResource": "Material|2023-01-12T13:56:39.975Z|15831",
-      "shader": "ShaderLitTextured",
-      "coat": {
-        "ƒ.CoatTextured": {
-          "color": "[1, 1, 1, 1]",
-          "idTexture": "TextureImage|2023-01-12T13:57:07.520Z|54364"
-        }
-      }
-    }
-  },
-  "TextureImage|2023-01-12T13:57:07.520Z|54364": {
-    "ƒ.TextureImage": {
-      "url": "Images\\ball.png",
-      "type": "TextureImage",
-      "Texture": {
-        "idResource": "TextureImage|2023-01-12T13:57:07.520Z|54364",
-        "name": "img_ball.png",
-        "mipmap": "CRISP"
-      }
     }
   }
 }
