@@ -276,7 +276,7 @@
                         "ƒ.ComponentAudio": {
                           "active": true,
                           "idResource": "Audio|2023-01-12T17:12:33.109Z|69433",
-                          "playing": false,
+                          "playing": true,
                           "loop": false,
                           "volume": 1
                         }
