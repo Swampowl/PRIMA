@@ -276,7 +276,7 @@
                         "ƒ.ComponentAudio": {
                           "active": true,
                           "idResource": "Audio|2023-01-12T17:12:33.109Z|69433",
-                          "playing": true,
+                          "playing": false,
                           "loop": false,
                           "volume": 1
                         }
@@ -440,6 +440,20 @@
                     "idMaterial": "Material|2023-01-12T13:24:30.413Z|67576"
                   }
                 }
+              ],
+              "ComponentTransform": [
+                {
+                  "ƒ.ComponentTransform": {
+                    "local": {
+                      "translation": "[0, 0, 0]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[1, 1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
               ]
             },
             "children": []
@@ -480,6 +494,20 @@
                       "active": true
                     },
                     "idMaterial": "Material|2023-01-12T13:15:46.407Z|71355"
+                  }
+                }
+              ],
+              "ComponentTransform": [
+                {
+                  "ƒ.ComponentTransform": {
+                    "local": {
+                      "translation": "[0, 0, 0]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[1, 1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
                   }
                 }
               ]
