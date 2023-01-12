@@ -52,7 +52,7 @@ var Script;
         cmpCamera.mtxPivot.rotateY(180);
     }
     function update(_event) {
-        // ƒ.Physics.simulate();  // if physics is included and used
+        //  ƒ.Physics.simulate();  // if physics is included and used
         viewport.draw();
         ƒ.AudioManager.default.update();
     }

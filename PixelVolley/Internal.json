@@ -308,6 +308,26 @@
             "name": "g_character",
             "idSource": "Graph|2023-01-10T19:14:25.382Z|48070"
           }
+        },
+        {
+          "ƒ.Node": {
+            "name": "music",
+            "active": true,
+            "components": {
+              "ComponentAudio": [
+                {
+                  "ƒ.ComponentAudio": {
+                    "active": true,
+                    "idResource": "Audio|2023-01-12T17:12:33.109Z|69433",
+                    "playing": true,
+                    "loop": true,
+                    "volume": 1
+                  }
+                }
+              ]
+            },
+            "children": []
+          }
         }
       ],
       "idResource": "Graph|2023-01-10T18:30:30.182Z|48587",
@@ -461,6 +481,14 @@
       ],
       "idResource": "Graph|2023-01-10T19:14:25.382Z|48070",
       "type": "Graph"
+    }
+  },
+  "Audio|2023-01-12T17:12:33.109Z|69433": {
+    "ƒ.Audio": {
+      "url": "audio\\blobby_music.mp3",
+      "idResource": "Audio|2023-01-12T17:12:33.109Z|69433",
+      "name": "audio_blobby.mp3",
+      "type": "Audio"
     }
   }
 }
