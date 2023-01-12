@@ -311,13 +311,6 @@
           }
         },
         {
-          "ƒ.GraphInstance": {
-            "deserializeFromSource": true,
-            "name": "g_character",
-            "idSource": "Graph|2023-01-10T19:14:25.382Z|48070"
-          }
-        },
-        {
           "ƒ.Node": {
             "name": "music",
             "active": true,
@@ -335,6 +328,13 @@
               ]
             },
             "children": []
+          }
+        },
+        {
+          "ƒ.GraphInstance": {
+            "deserializeFromSource": true,
+            "name": "g_character",
+            "idSource": "Graph|2023-01-10T19:14:25.382Z|48070"
           }
         }
       ],
@@ -440,96 +440,10 @@
                   }
                 }
               ],
-              "ComponentTransform": [
-                {
-                  "ƒ.ComponentTransform": {
-                    "local": {
-                      "translation": "[0, 0, 0]",
-                      "rotation": "[0, 0, 0]",
-                      "scaling": "[1, 1, 1]"
-                    },
-                    "Component": {
-                      "active": true
-                    }
-                  }
-                }
-              ],
-              "ComponentRigidbody": [
-                {
-                  "ƒ.ComponentRigidbody": {
-                    "initialization": "TO_MESH",
-                    "friction": 0.2,
-                    "restitution": 0.2,
-                    "mass": 1,
-                    "dampTranslation": 0.1,
-                    "dampRotation": 0.1,
-                    "effectGravity": 1,
-                    "typeBody": "DYNAMIC",
-                    "typeCollider": "SPHERE",
-                    "isTrigger": false,
-                    "id": 1,
-                    "pivot": {
-                      "translation": "[-2, -2.129999876022339, 3]",
-                      "rotation": "[0, 0, 0]",
-                      "scaling": "[0.75, 0.75, 1]"
-                    },
-                    "Component": {
-                      "active": true
-                    }
-                  }
-                }
-              ]
+              "ComponentTransform": [],
+              "ComponentRigidbody": []
             },
-            "children": [
-              {
-                "ƒ.Node": {
-                  "name": "rigid_upper",
-                  "active": true,
-                  "components": {
-                    "ComponentTransform": [
-                      {
-                        "ƒ.ComponentTransform": {
-                          "local": {
-                            "translation": "[0, 0, 0]",
-                            "rotation": "[0, 0, 0]",
-                            "scaling": "[1, 1, 1]"
-                          },
-                          "Component": {
-                            "active": true
-                          }
-                        }
-                      }
-                    ],
-                    "ComponentRigidbody": [
-                      {
-                        "ƒ.ComponentRigidbody": {
-                          "initialization": "TO_PIVOT",
-                          "friction": 0.2,
-                          "restitution": 0.2,
-                          "mass": 1,
-                          "dampTranslation": 0.1,
-                          "dampRotation": 0.1,
-                          "effectGravity": 1,
-                          "typeBody": "DYNAMIC",
-                          "typeCollider": "SPHERE",
-                          "isTrigger": false,
-                          "id": 0,
-                          "pivot": {
-                            "translation": "[0, 0, 0]",
-                            "rotation": "[0, 0, 0]",
-                            "scaling": "[1, 1, 1]"
-                          },
-                          "Component": {
-                            "active": true
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  "children": []
-                }
-              }
-            ]
+            "children": []
           }
         },
         {
