@@ -128,6 +128,14 @@
       }
     }
   },
+  "Audio|2023-01-12T17:12:33.109Z|69433": {
+    "ƒ.Audio": {
+      "url": "audio\\blobby_music.mp3",
+      "idResource": "Audio|2023-01-12T17:12:33.109Z|69433",
+      "name": "audio_blobby.mp3",
+      "type": "Audio"
+    }
+  },
   "Graph|2023-01-10T18:30:30.182Z|48587": {
     "ƒ.Graph": {
       "name": "g_world",
@@ -431,9 +439,97 @@
                     "idMaterial": "Material|2023-01-12T13:24:30.413Z|67576"
                   }
                 }
+              ],
+              "ComponentTransform": [
+                {
+                  "ƒ.ComponentTransform": {
+                    "local": {
+                      "translation": "[0, 0, 0]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[1, 1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
+              ],
+              "ComponentRigidbody": [
+                {
+                  "ƒ.ComponentRigidbody": {
+                    "initialization": "TO_MESH",
+                    "friction": 0.2,
+                    "restitution": 0.2,
+                    "mass": 1,
+                    "dampTranslation": 0.1,
+                    "dampRotation": 0.1,
+                    "effectGravity": 1,
+                    "typeBody": "DYNAMIC",
+                    "typeCollider": "SPHERE",
+                    "isTrigger": false,
+                    "id": 1,
+                    "pivot": {
+                      "translation": "[-2, -2.129999876022339, 3]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[0.75, 0.75, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
               ]
             },
-            "children": []
+            "children": [
+              {
+                "ƒ.Node": {
+                  "name": "rigid_upper",
+                  "active": true,
+                  "components": {
+                    "ComponentTransform": [
+                      {
+                        "ƒ.ComponentTransform": {
+                          "local": {
+                            "translation": "[0, 0, 0]",
+                            "rotation": "[0, 0, 0]",
+                            "scaling": "[1, 1, 1]"
+                          },
+                          "Component": {
+                            "active": true
+                          }
+                        }
+                      }
+                    ],
+                    "ComponentRigidbody": [
+                      {
+                        "ƒ.ComponentRigidbody": {
+                          "initialization": "TO_PIVOT",
+                          "friction": 0.2,
+                          "restitution": 0.2,
+                          "mass": 1,
+                          "dampTranslation": 0.1,
+                          "dampRotation": 0.1,
+                          "effectGravity": 1,
+                          "typeBody": "DYNAMIC",
+                          "typeCollider": "SPHERE",
+                          "isTrigger": false,
+                          "id": 0,
+                          "pivot": {
+                            "translation": "[0, 0, 0]",
+                            "rotation": "[0, 0, 0]",
+                            "scaling": "[1, 1, 1]"
+                          },
+                          "Component": {
+                            "active": true
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "children": []
+                }
+              }
+            ]
           }
         },
         {
@@ -481,14 +577,6 @@
       ],
       "idResource": "Graph|2023-01-10T19:14:25.382Z|48070",
       "type": "Graph"
-    }
-  },
-  "Audio|2023-01-12T17:12:33.109Z|69433": {
-    "ƒ.Audio": {
-      "url": "audio\\blobby_music.mp3",
-      "idResource": "Audio|2023-01-12T17:12:33.109Z|69433",
-      "name": "audio_blobby.mp3",
-      "type": "Audio"
     }
   }
 }
