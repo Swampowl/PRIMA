@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>PixelVolley</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="styles.css" />
+
+<!--Editor settings of this project-->
+<meta type="settings" autoview="Graph|2023-01-10T18:30:30.182Z|48587" project="{'name':'PixelVolley','graphAutoView':'Graph|2023-01-10T18:30:30.182Z|48587'}" panels="[{'type':'PanelProject','state':{}},{'type':'PanelGraph','state':{'graph':'Graph|2023-01-10T18:30:30.182Z|48587'}}]" />
+
+<!--Activate the following line to include the FUDGE-version of Oimo-Physics. You may want to download a local copy to work offline and be independent from future changes!-->
+<!--<script type="text/javascript" src="https://jirkadelloro.github.io/FUDGE/Physics/OimoPhysics.js"></script>-->
+
+<!--Load FUDGE. You may want to download local copies to work offline and be independent from future changes! Developers working on FUDGE itself may want to create symlinks-->
+<script type="text/javascript" src="https://jirkadelloro.github.io/FUDGE/UserInterface/Build/FudgeUserInterface.js"></script>
+<script type="text/javascript" src="https://jirkadelloro.github.io/FUDGE/Core/Build/FudgeCore.js"></script>
+<script type="text/javascript" src="https://jirkadelloro.github.io/FUDGE/Aid/Build/FudgeAid.js"></script>
+
+<!--Link internal resources. The editor only loads the first, but at runtime, multiple files can contribute-->
+<link type="resources" src="Internal.json" />
+
+<!--Load custom scripts-->
+<script type="text/javascript" src="Script/Build/Script.js" editor="true"></script>
+
+<!--Load Autoview script-->
+<script type="text/javascript" src="Autoview.js"></script>
+
+</head>
+<body>
+    <dialog>
+        <p>FUDGE Autoview</p>
+        <h1>Title (will be replaced by Autoview)</h1>
+        <p class="blink">click to start</p>
+    </dialog>
+    <div class="canvas-container">
+        <canvas class="fullscreen">
+</canvas>
+        <div id="vui">
+            <div class="vui-container">
+                <div class="score">
+                    <p>Score</p>
+                    <input type="text" key="score" />
+                </div>
+                <div class="stage">
+                    <p>Stage</p>
+                    <input type="text" key="stage" />
+                </div>
+                <div class="power">
+                    <input type="text" key="power" />
+                    <p>Power</p>
+                </div>
+                <div class="hp">
+                    <input type="text" key="hp" />
+                    <p>Lives</p>
+                </div>
+            </div>
+            <div class="info">
+                <input type="text" key="info" />
+            </div>
+            <div class="start">
+                <h1>XSoldier</h1>
+                <p class="blink">Press SPACE To Start</p>
+                <div class="controls">
+                    <h2>Controls</h2>
+                    <p>WASD - Move</p>
+                    <p>Shift - Boost</p>
+                    <p>SPACE - Shoot</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <video id="bg" class="bg" playsinline="" loop="" autoplay="" muted="">
+        <source
+            src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/1098340/e90055f0442c0d0446cd90fb237903a861c8da8b.webm"
+            type="video/webm" />
+        <source
+            src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/1098340/ed0f1be27eab79d06a54fe9657d49a5fee0e12c8.mp4"
+            type="video/mp4" />
+    </video> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
