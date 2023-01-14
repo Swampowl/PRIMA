@@ -66,7 +66,7 @@ var Script;
         console.log(blueBlob);
     }
     function update(_event) {
-        //  ƒ.Physics.simulate();  // if physics is included and used
+        ƒ.Physics.simulate(); // if physics is included and used
         viewport.draw();
         ƒ.AudioManager.default.update();
         movement();
@@ -74,6 +74,7 @@ var Script;
     function movement() {
         if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.D])) {
             redBlob.getComponent(ƒ.ComponentTransform).mtxLocal.translateX(0.02);
+            console.log(redBlob.mtxLocal.getX().x);
         }
         if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.A])) {
             redBlob.getComponent(ƒ.ComponentTransform).mtxLocal.translateX(-0.015);
@@ -83,6 +84,12 @@ var Script;
         }
         if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_LEFT])) {
             blueBlob.getComponent(ƒ.ComponentTransform).mtxLocal.translateX(-0.02);
+        }
+        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP])) {
+            blueBlob.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(0.015);
+        }
+        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_DOWN])) {
+            blueBlob.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(-0.02);
         }
     }
 })(Script || (Script = {}));

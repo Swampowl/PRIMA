@@ -136,6 +136,69 @@
       "type": "Audio"
     }
   },
+  "Audio|2023-01-14T19:02:39.909Z|94840": {
+    "ƒ.Audio": {
+      "url": "audio\\bobby_volley_track_1.mp3",
+      "idResource": "Audio|2023-01-14T19:02:39.909Z|94840",
+      "name": "audio_bobby_volley_track_1.mp3",
+      "type": "Audio"
+    }
+  },
+  "Material|2023-01-14T21:37:33.238Z|23943": {
+    "ƒ.Material": {
+      "name": "mat_wall_left_crew",
+      "idResource": "Material|2023-01-14T21:37:33.238Z|23943",
+      "shader": "ShaderLitTextured",
+      "coat": {
+        "ƒ.CoatTextured": {
+          "color": "[1, 1, 1, 1]",
+          "idTexture": "TextureImage|2023-01-14T21:37:17.954Z|88296"
+        }
+      }
+    }
+  },
+  "TextureImage|2023-01-14T21:37:17.954Z|88296": {
+    "ƒ.TextureImage": {
+      "url": "Images\\wall_left_crew.png",
+      "type": "TextureImage",
+      "Texture": {
+        "idResource": "TextureImage|2023-01-14T21:37:17.954Z|88296",
+        "name": "img_wall_left_crew.png",
+        "mipmap": "CRISP"
+      }
+    }
+  },
+  "MeshCube|2023-01-14T21:37:07.273Z|88520": {
+    "ƒ.MeshCube": {
+      "idResource": "MeshCube|2023-01-14T21:37:07.273Z|88520",
+      "name": "mesh_wall",
+      "type": "MeshCube"
+    }
+  },
+  "Material|2023-01-14T22:21:37.207Z|46445": {
+    "ƒ.Material": {
+      "name": "mat_wall_right",
+      "idResource": "Material|2023-01-14T22:21:37.207Z|46445",
+      "shader": "ShaderLitTextured",
+      "coat": {
+        "ƒ.CoatTextured": {
+          "color": "[1, 1, 1, 1]",
+          "idTexture": "TextureImage|2023-01-14T22:21:56.596Z|99490"
+        }
+      }
+    }
+  },
+  "TextureImage|2023-01-14T22:21:56.596Z|99490": {
+    "ƒ.TextureImage": {
+      "url": "Images\\wall_right.png",
+      "type": "TextureImage",
+      "Texture": {
+        "idResource": "TextureImage|2023-01-14T22:21:56.596Z|99490",
+        "name": "img_wall_right.png",
+        "mipmap": "CRISP"
+      }
+    }
+  },
   "Graph|2023-01-10T18:30:30.182Z|48587": {
     "ƒ.Graph": {
       "name": "g_world",
@@ -221,6 +284,45 @@
                     "idMaterial": "Material|2023-01-10T19:45:46.191Z|98025"
                   }
                 }
+              ],
+              "ComponentTransform": [
+                {
+                  "ƒ.ComponentTransform": {
+                    "local": {
+                      "translation": "[0, 0, 0]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[1, 1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
+              ],
+              "ComponentRigidbody": [
+                {
+                  "ƒ.ComponentRigidbody": {
+                    "initialization": "TO_PIVOT",
+                    "friction": 0.2,
+                    "restitution": 0.2,
+                    "mass": 1,
+                    "dampTranslation": 0.1,
+                    "dampRotation": 0.1,
+                    "effectGravity": 0,
+                    "typeBody": "KINEMATIC",
+                    "typeCollider": "CUBE",
+                    "isTrigger": false,
+                    "id": 4,
+                    "pivot": {
+                      "translation": "[0, -3.0999999046325684, 3]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[10, 1, 5]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
               ]
             },
             "children": []
@@ -236,9 +338,9 @@
                   "ƒ.ComponentMesh": {
                     "idMesh": "MeshQuad|2023-01-11T23:13:41.548Z|18928",
                     "pivot": {
-                      "translation": "[0, -1.6999996900558472, 3]",
+                      "translation": "[0, 0, 0]",
                       "rotation": "[0, 0, 0]",
-                      "scaling": "[0.3999999165534973, 1.5999999046325684, 0]"
+                      "scaling": "[1, 1, 1]"
                     },
                     "Component": {
                       "active": true
@@ -263,6 +365,45 @@
                     "idMaterial": "Material|2023-01-11T23:13:56.481Z|91440"
                   }
                 }
+              ],
+              "ComponentTransform": [
+                {
+                  "ƒ.ComponentTransform": {
+                    "local": {
+                      "translation": "[0, -1.5100003480911255, 3]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[0.5999999046325684, 2, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
+              ],
+              "ComponentRigidbody": [
+                {
+                  "ƒ.ComponentRigidbody": {
+                    "initialization": "TO_PIVOT",
+                    "friction": 0.2,
+                    "restitution": 0.2,
+                    "mass": 25,
+                    "dampTranslation": 0.1,
+                    "dampRotation": 0.1,
+                    "effectGravity": 0,
+                    "typeBody": "DYNAMIC",
+                    "typeCollider": "CUBE",
+                    "isTrigger": false,
+                    "id": 2,
+                    "pivot": {
+                      "translation": "[0, 0, 0]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[0.49999991059303284, 0.9600000381469727, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
               ]
             },
             "children": [
@@ -275,10 +416,10 @@
                       {
                         "ƒ.ComponentAudio": {
                           "active": true,
-                          "idResource": "Audio|2023-01-12T17:12:33.109Z|69433",
+                          "idResource": "Audio|2023-01-14T19:02:39.909Z|94840",
                           "playing": false,
                           "loop": false,
-                          "volume": 0.7000000476837158
+                          "volume": 1
                         }
                       }
                     ]
@@ -299,7 +440,7 @@
                   "ƒ.ComponentMesh": {
                     "idMesh": "MeshQuad|2023-01-12T13:56:26.385Z|54139",
                     "pivot": {
-                      "translation": "[0, 0, 4]",
+                      "translation": "[0, 0, 3]",
                       "rotation": "[0, 0, 0]",
                       "scaling": "[0.49999991059303284, 0.4999999403953552, 1]"
                     },
@@ -326,6 +467,45 @@
                     "idMaterial": "Material|2023-01-12T13:56:39.975Z|15831"
                   }
                 }
+              ],
+              "ComponentTransform": [
+                {
+                  "ƒ.ComponentTransform": {
+                    "local": {
+                      "translation": "[0, 0, 0]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[1, 1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
+              ],
+              "ComponentRigidbody": [
+                {
+                  "ƒ.ComponentRigidbody": {
+                    "initialization": "TO_PIVOT",
+                    "friction": 0.2,
+                    "restitution": 0.2,
+                    "mass": 0.7000000000000002,
+                    "dampTranslation": 0.10000000000000003,
+                    "dampRotation": -0.1,
+                    "effectGravity": 0.9999999999999999,
+                    "typeBody": "DYNAMIC",
+                    "typeCollider": "CYLINDER",
+                    "isTrigger": false,
+                    "id": 0,
+                    "pivot": {
+                      "translation": "[0, 0, 3]",
+                      "rotation": "[90, 0, 0]",
+                      "scaling": "[0.49999991059303284, 1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
               ]
             },
             "children": []
@@ -336,6 +516,168 @@
             "deserializeFromSource": true,
             "name": "g_character",
             "idSource": "Graph|2023-01-10T19:14:25.382Z|48070"
+          }
+        },
+        {
+          "ƒ.Node": {
+            "name": "wall_right",
+            "active": true,
+            "components": {
+              "ComponentTransform": [
+                {
+                  "ƒ.ComponentTransform": {
+                    "local": {
+                      "translation": "[2.799999475479126, -1, 3]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[1, 3, 5]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
+              ],
+              "ComponentRigidbody": [
+                {
+                  "ƒ.ComponentRigidbody": {
+                    "initialization": "TO_PIVOT",
+                    "friction": 0.19999999999999937,
+                    "restitution": 0.2,
+                    "mass": 901,
+                    "dampTranslation": 0.1,
+                    "dampRotation": 0.1,
+                    "effectGravity": 0,
+                    "typeBody": "DYNAMIC",
+                    "typeCollider": "CUBE",
+                    "isTrigger": false,
+                    "id": 5,
+                    "pivot": {
+                      "translation": "[0, 0, 0]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[1, 1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
+              ],
+              "ComponentMesh": [
+                {
+                  "ƒ.ComponentMesh": {
+                    "idMesh": "MeshCube|2023-01-14T21:37:07.273Z|88520",
+                    "pivot": {
+                      "translation": "[0, 0, 0]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[1, 1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
+              ],
+              "ComponentMaterial": [
+                {
+                  "ƒ.ComponentMaterial": {
+                    "sortForAlpha": false,
+                    "clrPrimary": "[1, 1, 1, 1]",
+                    "clrSecondary": "[1, 1, 1, 1]",
+                    "pivot": {
+                      "translation": "[0, 0]",
+                      "rotation": 0,
+                      "scaling": "[1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    },
+                    "idMaterial": "Material|2023-01-14T22:21:37.207Z|46445"
+                  }
+                }
+              ]
+            },
+            "children": []
+          }
+        },
+        {
+          "ƒ.Node": {
+            "name": "wall_left",
+            "active": true,
+            "components": {
+              "ComponentTransform": [
+                {
+                  "ƒ.ComponentTransform": {
+                    "local": {
+                      "translation": "[-2.799999237060547, -1, 3]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[1, 3, 5]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
+              ],
+              "ComponentRigidbody": [
+                {
+                  "ƒ.ComponentRigidbody": {
+                    "initialization": "TO_PIVOT",
+                    "friction": 0.2,
+                    "restitution": 0.2,
+                    "mass": 1,
+                    "dampTranslation": 0.1,
+                    "dampRotation": 0.1,
+                    "effectGravity": 1,
+                    "typeBody": "DYNAMIC",
+                    "typeCollider": "CUBE",
+                    "isTrigger": false,
+                    "id": 6,
+                    "pivot": {
+                      "translation": "[0, 0, 0]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[1, 1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
+              ],
+              "ComponentMesh": [
+                {
+                  "ƒ.ComponentMesh": {
+                    "idMesh": "MeshCube|2023-01-14T21:37:07.273Z|88520",
+                    "pivot": {
+                      "translation": "[0, 0, 0]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[1, 1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
+              ],
+              "ComponentMaterial": [
+                {
+                  "ƒ.ComponentMaterial": {
+                    "sortForAlpha": false,
+                    "clrPrimary": "[1, 1, 1, 1]",
+                    "clrSecondary": "[1, 1, 1, 1]",
+                    "pivot": {
+                      "translation": "[0, 0]",
+                      "rotation": 0,
+                      "scaling": "[1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    },
+                    "idMaterial": "Material|2023-01-14T21:37:33.238Z|23943"
+                  }
+                }
+              ]
+            },
+            "children": []
           }
         }
       ],
@@ -413,9 +755,9 @@
                   "ƒ.ComponentMesh": {
                     "idMesh": "MeshQuad|2023-01-10T19:17:03.973Z|22965",
                     "pivot": {
-                      "translation": "[-2, -2.129999876022339, 3]",
+                      "translation": "[0, 0, 0]",
                       "rotation": "[0, 0, 0]",
-                      "scaling": "[0.75, 0.75, 1]"
+                      "scaling": "[0.7499998807907104, 0.7499998807907104, 0]"
                     },
                     "Component": {
                       "active": true
@@ -445,9 +787,34 @@
                 {
                   "ƒ.ComponentTransform": {
                     "local": {
-                      "translation": "[0, 0, 0]",
+                      "translation": "[-2, -2.129999876022339, 3]",
                       "rotation": "[0, 0, 0]",
-                      "scaling": "[1, 1, 1]"
+                      "scaling": "[0.7499998807907104, 0.75, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
+              ],
+              "ComponentRigidbody": [
+                {
+                  "ƒ.ComponentRigidbody": {
+                    "initialization": "TO_PIVOT",
+                    "friction": 0.2,
+                    "restitution": 0.2,
+                    "mass": 1,
+                    "dampTranslation": 0.1,
+                    "dampRotation": 0.1,
+                    "effectGravity": 0,
+                    "typeBody": "KINEMATIC",
+                    "typeCollider": "CYLINDER",
+                    "isTrigger": false,
+                    "id": 0,
+                    "pivot": {
+                      "translation": "[0, 0.20000001788139343, 0]",
+                      "rotation": "[90, 0, 0]",
+                      "scaling": "[0.49999991059303284, 1, 1]"
                     },
                     "Component": {
                       "active": true
@@ -456,7 +823,56 @@
                 }
               ]
             },
-            "children": []
+            "children": [
+              {
+                "ƒ.Node": {
+                  "name": "rigid_lower",
+                  "active": true,
+                  "components": {
+                    "ComponentTransform": [
+                      {
+                        "ƒ.ComponentTransform": {
+                          "local": {
+                            "translation": "[0, 0, 0]",
+                            "rotation": "[0, 0, 0]",
+                            "scaling": "[1, 1, 1]"
+                          },
+                          "Component": {
+                            "active": true
+                          }
+                        }
+                      }
+                    ],
+                    "ComponentRigidbody": [
+                      {
+                        "ƒ.ComponentRigidbody": {
+                          "initialization": "TO_PIVOT",
+                          "friction": 0.2,
+                          "restitution": 0.2,
+                          "mass": 1,
+                          "dampTranslation": 0.1,
+                          "dampRotation": 0.1,
+                          "effectGravity": 0,
+                          "typeBody": "KINEMATIC",
+                          "typeCollider": "CYLINDER",
+                          "isTrigger": false,
+                          "id": 1,
+                          "pivot": {
+                            "translation": "[0, -0.13999997079372406, 0]",
+                            "rotation": "[90, 0, 0]",
+                            "scaling": "[0.6999999284744263, 1, 1]"
+                          },
+                          "Component": {
+                            "active": true
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "children": []
+                }
+              }
+            ]
           }
         },
         {
@@ -469,7 +885,7 @@
                   "ƒ.ComponentMesh": {
                     "idMesh": "MeshQuad|2023-01-10T19:17:03.973Z|22965",
                     "pivot": {
-                      "translation": "[2, -2.129999876022339, 3]",
+                      "translation": "[0, 0, 0]",
                       "rotation": "[0, 0, 0]",
                       "scaling": "[0.75, 0.75, 1]"
                     },
@@ -501,9 +917,34 @@
                 {
                   "ƒ.ComponentTransform": {
                     "local": {
-                      "translation": "[0, 0, 0]",
+                      "translation": "[2, -2.130000114440918, 3]",
                       "rotation": "[0, 0, 0]",
-                      "scaling": "[1, 1, 1]"
+                      "scaling": "[0.75, 0.75, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
+              ],
+              "ComponentRigidbody": [
+                {
+                  "ƒ.ComponentRigidbody": {
+                    "initialization": "TO_PIVOT",
+                    "friction": 0.2,
+                    "restitution": 0.2,
+                    "mass": 1,
+                    "dampTranslation": 0.1,
+                    "dampRotation": 0.1,
+                    "effectGravity": 0,
+                    "typeBody": "KINEMATIC",
+                    "typeCollider": "CYLINDER",
+                    "isTrigger": false,
+                    "id": 2,
+                    "pivot": {
+                      "translation": "[0, 0.20000000298023224, 0]",
+                      "rotation": "[90, 0, 0]",
+                      "scaling": "[0.4000000059604645, 0.9999998807907104, 1]"
                     },
                     "Component": {
                       "active": true
@@ -512,7 +953,56 @@
                 }
               ]
             },
-            "children": []
+            "children": [
+              {
+                "ƒ.Node": {
+                  "name": "rigid_lower",
+                  "active": true,
+                  "components": {
+                    "ComponentTransform": [
+                      {
+                        "ƒ.ComponentTransform": {
+                          "local": {
+                            "translation": "[0, 0, 0]",
+                            "rotation": "[0, 0, 0]",
+                            "scaling": "[1, 1, 1]"
+                          },
+                          "Component": {
+                            "active": true
+                          }
+                        }
+                      }
+                    ],
+                    "ComponentRigidbody": [
+                      {
+                        "ƒ.ComponentRigidbody": {
+                          "initialization": "TO_PIVOT",
+                          "friction": 0.2,
+                          "restitution": 0.2,
+                          "mass": 1,
+                          "dampTranslation": 0.1,
+                          "dampRotation": 0.1,
+                          "effectGravity": 0,
+                          "typeBody": "KINEMATIC",
+                          "typeCollider": "CYLINDER",
+                          "isTrigger": false,
+                          "id": 3,
+                          "pivot": {
+                            "translation": "[0, -0.14000000059604645, 0]",
+                            "rotation": "[90, 0, 0]",
+                            "scaling": "[0.7000000476837158, 1.0000001192092896, 1]"
+                          },
+                          "Component": {
+                            "active": true
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "children": []
+                }
+              }
+            ]
           }
         }
       ],
