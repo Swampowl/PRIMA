@@ -527,7 +527,7 @@
                 {
                   "ƒ.ComponentTransform": {
                     "local": {
-                      "translation": "[2.799999475479126, -1, 3]",
+                      "translation": "[3.6999988555908203, -1, 3]",
                       "rotation": "[0, 0, 0]",
                       "scaling": "[1, 3, 5]"
                     },
@@ -608,7 +608,7 @@
                 {
                   "ƒ.ComponentTransform": {
                     "local": {
-                      "translation": "[-2.799999237060547, -1, 3]",
+                      "translation": "[-3.6999993324279785, -1, 3]",
                       "rotation": "[0, 0, 0]",
                       "scaling": "[1, 3, 5]"
                     },
@@ -787,7 +787,7 @@
                 {
                   "ƒ.ComponentTransform": {
                     "local": {
-                      "translation": "[-2, -2.129999876022339, 3]",
+                      "translation": "[-1.6999998092651367, -2.129999876022339, 3]",
                       "rotation": "[0, 0, 0]",
                       "scaling": "[0.7499998807907104, 0.75, 1]"
                     },
@@ -917,7 +917,7 @@
                 {
                   "ƒ.ComponentTransform": {
                     "local": {
-                      "translation": "[2, -2.130000114440918, 3]",
+                      "translation": "[1.6999998092651367, -2.130000114440918, 3]",
                       "rotation": "[0, 0, 0]",
                       "scaling": "[0.75, 0.75, 1]"
                     },
