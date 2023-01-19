@@ -131,6 +131,11 @@ var Script;
         if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_DOWN])) {
             blueBlob.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(-0.02);
         }
+        else {
+            blueBlob.getComponent(ƒ.ComponentRigidbody).applyForce(new ƒ.Vector3(0, 0, 0));
+            redBlob.getComponent(ƒ.ComponentRigidbody).applyForce(new ƒ.Vector3(0, 0, 0));
+            redBlob.getComponent(ƒ.ComponentRigidbody).applyForce(new ƒ.Vector3(0, -2, 0));
+        }
     }
 })(Script || (Script = {}));
 //# sourceMappingURL=Script.js.map

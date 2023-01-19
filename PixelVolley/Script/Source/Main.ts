@@ -31,7 +31,7 @@ namespace Script {
     viewport = _event.detail;
     cmpCamera = viewport.camera;
     branch = viewport.getBranch();
- 
+
     viewport.physicsDebugMode = ƒ.PHYSICS_DEBUGMODE.JOINTS_AND_COLLIDER;
 
 
@@ -79,8 +79,8 @@ namespace Script {
 
   function update(_event: Event): void {
     let posBall_rigid: ƒ.Vector3;
-    let pos_blueBlob_rigid:ƒ.Vector3;
-    ƒ.Physics.simulate();  
+    let pos_blueBlob_rigid: ƒ.Vector3;
+    ƒ.Physics.simulate();
     viewport.draw();
     ƒ.AudioManager.default.update();
     movement();
@@ -96,26 +96,24 @@ namespace Script {
   function movement() {
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.D])) {
       redBlob.getComponent(ƒ.ComponentRigidbody).applyForce(
-        new ƒ.Vector3(+5, 0, 0) );
+        new ƒ.Vector3(+5, 0, 0));
 
     }
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.A])) {
       redBlob.getComponent(ƒ.ComponentRigidbody).applyForce(
-        new ƒ.Vector3(-5, 0, 0) );
+        new ƒ.Vector3(-5, 0, 0));
 
 
     }
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_RIGHT])) {
       blueBlob.getComponent(ƒ.ComponentRigidbody).applyForce(
-        new ƒ.Vector3(1, 0, 0) );
-      
-      
-      }
+        new ƒ.Vector3(1, 0, 0));
 
+
+    }
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_LEFT])) {
       blueBlob.getComponent(ƒ.ComponentRigidbody).applyForce(
-        new ƒ.Vector3(-2, 0, 0) );
-
+        new ƒ.Vector3(-2, 0, 0));
 
     }
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP])) {
@@ -123,6 +121,16 @@ namespace Script {
     }
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_DOWN])) {
       blueBlob.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(-0.02);
+    }
+
+    else {
+      blueBlob.getComponent(ƒ.ComponentRigidbody).applyForce(
+        new ƒ.Vector3(0, 0, 0));
+      redBlob.getComponent(ƒ.ComponentRigidbody).applyForce(
+        new ƒ.Vector3(0, 0, 0));
+        redBlob.getComponent(ƒ.ComponentRigidbody).applyForce(
+          new ƒ.Vector3(0, -2, 0));
+            
     }
 
   }
