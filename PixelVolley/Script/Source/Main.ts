@@ -84,7 +84,8 @@ namespace Script {
     viewport.draw();
     ƒ.AudioManager.default.update();
     movement();
-    console.log(ball.mtxLocal.translation.toString())
+    //console.log(ball.mtxLocal.translation.toString())
+    console.log(blueBlob.mtxLocal.translation.toString())
     posBall_rigid = ball_rigid.getPosition();
     posBall_rigid.z = 3;
 
@@ -116,11 +117,14 @@ namespace Script {
         new ƒ.Vector3(7.5, 0, 0));
 
     }
-    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP])) {
-      blueBlob.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(0.015);
+    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.W])) {
+      redBlob.getComponent(ƒ.ComponentRigidbody).applyImpulseAtPoint(new ƒ.Vector3(0, 1
+        , 0));
     }
-    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_DOWN])) {
-      blueBlob.getComponent(ƒ.ComponentTransform).mtxLocal.translateY(-0.02);
+
+    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP])) {
+      blueBlob.getComponent(ƒ.ComponentRigidbody).applyImpulseAtPoint(new ƒ.Vector3(0, 1
+        , 0));
     }
 
     else {
