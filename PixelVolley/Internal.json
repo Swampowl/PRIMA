@@ -461,9 +461,9 @@
                 {
                   "ƒ.ComponentRigidbody": {
                     "initialization": "TO_PIVOT",
-                    "friction": 0.1,
+                    "friction": 0,
                     "restitution": 0.9999999999999999,
-                    "mass": 0.3000000000000004,
+                    "mass": 0.3400000000000004,
                     "dampTranslation": 0,
                     "dampRotation": 0,
                     "effectGravity": 0.08900000000000002,
