@@ -96,24 +96,24 @@ namespace Script {
   function movement() {
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.D])) {
       redBlob.getComponent(ƒ.ComponentRigidbody).applyForce(
-        new ƒ.Vector3(+5, 0, 0));
+        new ƒ.Vector3(+10, 0, 0));
 
     }
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.A])) {
       redBlob.getComponent(ƒ.ComponentRigidbody).applyForce(
-        new ƒ.Vector3(-5, 0, 0));
-
-
-    }
-    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_RIGHT])) {
-      blueBlob.getComponent(ƒ.ComponentRigidbody).applyForce(
-        new ƒ.Vector3(1, 0, 0));
+        new ƒ.Vector3(-7.5, 0, 0));
 
 
     }
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_LEFT])) {
       blueBlob.getComponent(ƒ.ComponentRigidbody).applyForce(
-        new ƒ.Vector3(-2, 0, 0));
+        new ƒ.Vector3(-10, 0, 0));
+
+
+    }
+    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_RIGHT])) {
+      blueBlob.getComponent(ƒ.ComponentRigidbody).applyForce(
+        new ƒ.Vector3(7.5, 0, 0));
 
     }
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP])) {
@@ -128,9 +128,9 @@ namespace Script {
         new ƒ.Vector3(0, 0, 0));
       redBlob.getComponent(ƒ.ComponentRigidbody).applyForce(
         new ƒ.Vector3(0, 0, 0));
-        redBlob.getComponent(ƒ.ComponentRigidbody).applyForce(
-          new ƒ.Vector3(0, -2, 0));
-            
+      redBlob.getComponent(ƒ.ComponentRigidbody).applyForce(
+        new ƒ.Vector3(0, -2, 0));
+
     }
 
   }
