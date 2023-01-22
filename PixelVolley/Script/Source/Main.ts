@@ -39,7 +39,7 @@ namespace Script {
     cmpCamera = viewport.camera;
     branch = viewport.getBranch();
 
-    viewport.physicsDebugMode = ƒ.PHYSICS_DEBUGMODE.JOINTS_AND_COLLIDER;
+   // viewport.physicsDebugMode = ƒ.PHYSICS_DEBUGMODE.JOINTS_AND_COLLIDER; 
 
     ƒ.Loop.addEventListener(ƒ.EVENT.LOOP_FRAME, update);
     //start the game loop to continously draw the viewport, update the audiosystem and drive the physics i/a

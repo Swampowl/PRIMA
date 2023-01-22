@@ -68,7 +68,7 @@ var Script;
         viewport = _event.detail;
         cmpCamera = viewport.camera;
         branch = viewport.getBranch();
-        viewport.physicsDebugMode = ƒ.PHYSICS_DEBUGMODE.JOINTS_AND_COLLIDER;
+        // viewport.physicsDebugMode = ƒ.PHYSICS_DEBUGMODE.JOINTS_AND_COLLIDER; 
         ƒ.Loop.addEventListener("loopFrame" /* ƒ.EVENT.LOOP_FRAME */, update);
         //start the game loop to continously draw the viewport, update the audiosystem and drive the physics i/a
         cmpCamera.mtxPivot.translate(new ƒ.Vector3(0, -1, 10));
