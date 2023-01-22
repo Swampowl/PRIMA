@@ -55,7 +55,7 @@ namespace Script {
     redBlob_rigid = redBlob.getComponent(ƒ.ComponentRigidbody);
     redBlob_rigid.effectRotation = new ƒ.Vector3(0, 0, 0);
     redBlob.addChild(createNewSpriteNode());
-    animationRed = await buildAnimation("Images/red_blobb.png", "redBlobb", 2, 0, 28, 32, 4, 31);
+    animationRed = await buildAnimation("Images/red_blobb.png", "redBlobb", 2, 0, 28, 31, 4, 31);
     const spriteRed = redBlob.getChildrenByName("Sprite")[0] as ƒAid.NodeSprite;
       spriteRed.setAnimation(animationRed);
 

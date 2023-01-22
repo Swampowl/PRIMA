@@ -463,7 +463,7 @@
                     "initialization": "TO_PIVOT",
                     "friction": 0.30000000000000004,
                     "restitution": 0.9999999999999999,
-                    "mass": 1.0999999999999999,
+                    "mass": 0.7999999999999999,
                     "dampTranslation": 0,
                     "dampRotation": 0,
                     "effectGravity": 0.30000000000000016,

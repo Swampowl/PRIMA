@@ -1,11 +1,14 @@
 html,
+
+
 body {
   padding: 0px;
   margin: 0px;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: aqua;
+  background-image: url(/Images/startup.webp);
+  background-size: cover;
 }
 
 dialog {
@@ -19,8 +22,7 @@ canvas.fullscreen {
 
 #startup {
  align-items: center;
-  height: 40%;
-  width: 40%;
-  background-color: green;
-  border-radius: 5px;
+ color: whitesmoke;
+  background-color: transparent;
+
 }
