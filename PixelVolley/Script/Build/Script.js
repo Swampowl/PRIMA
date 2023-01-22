@@ -112,6 +112,7 @@ var Script;
         wall_right_rigid.effectRotation = new ƒ.Vector3(0, 0, 0);
         ƒ.Loop.start();
     }
+    // function checkScore()
     function update(_event) {
         ƒ.Physics.simulate();
         viewport.draw();

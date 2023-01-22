@@ -94,6 +94,8 @@ namespace Script {
     ƒ.Loop.start();
   }
 
+ // function checkScore()
+
   function update(_event: Event): void {
     ƒ.Physics.simulate();
     viewport.draw();
