@@ -9,3 +9,13 @@ declare namespace Script {
 }
 declare namespace Script {
 }
+declare namespace Script {
+    interface config {
+        jumpImpulse: number;
+        forwardForceBlue: number;
+        backwardForceBlue: number;
+        forwardForceRed: number;
+        backwardForceRed: number;
+        ballMass: number;
+    }
+}

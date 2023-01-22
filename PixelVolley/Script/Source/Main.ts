@@ -27,6 +27,8 @@ namespace Script {
   let pos_redBlob_rigid: ƒ.Vector3;
   let animationBlue: ƒAid.SpriteSheetAnimation;
   let animationRed: ƒAid.SpriteSheetAnimation;
+  let config: config;
+
 
 
   document.addEventListener(
@@ -38,6 +40,7 @@ namespace Script {
     viewport = _event.detail;
     cmpCamera = viewport.camera;
     branch = viewport.getBranch();
+    config = await (await fetch("Script/Source/config.json")).json();
 
    // viewport.physicsDebugMode = ƒ.PHYSICS_DEBUGMODE.JOINTS_AND_COLLIDER; 
 
@@ -117,39 +120,39 @@ namespace Script {
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.D])) {
       redBlob
         .getComponent(ƒ.ComponentRigidbody)
-        .applyForce(new ƒ.Vector3(+10, 0, 0));
+        .applyForce(new ƒ.Vector3(config.forwardForceRed, 0, 0));
     }
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.A])) {
       redBlob
         .getComponent(ƒ.ComponentRigidbody)
-        .applyForce(new ƒ.Vector3(-7.5, 0, 0));
+        .applyForce(new ƒ.Vector3(config.backwardForceRed, 0, 0));
     }
     if (
       ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.W]) &&
-      pos_redBlob_rigid.y < -1.8
+      pos_redBlob_rigid.y < -1.81
     ) {
       redBlob
         .getComponent(ƒ.ComponentRigidbody)
-        .applyLinearImpulse(new ƒ.Vector3(0, .5, 0));
+        .applyLinearImpulse(new ƒ.Vector3(0, config.jumpImpulse, 0));
     }
     //blueBlobb
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_LEFT])) {
       blueBlob
         .getComponent(ƒ.ComponentRigidbody)
-        .applyForce(new ƒ.Vector3(-10, 0, 0));
+        .applyForce(new ƒ.Vector3(config.forwardForceBlue, 0, 0));
     }
     if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_RIGHT])) {
       blueBlob
         .getComponent(ƒ.ComponentRigidbody)
-        .applyForce(new ƒ.Vector3(7.5, 0, 0));
+        .applyForce(new ƒ.Vector3(config.backwardForceBlue, 0, 0));
     }
     if (
       ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP]) &&
-      pos_blueBlob_rigid.y < -1.8
+      pos_blueBlob_rigid.y < -1.81
     ) {
       blueBlob
         .getComponent(ƒ.ComponentRigidbody)
-        .applyLinearImpulse(new ƒ.Vector3(0, .5, 0));
+        .applyLinearImpulse(new ƒ.Vector3(0, config.jumpImpulse, 0));
     }
   }
 
