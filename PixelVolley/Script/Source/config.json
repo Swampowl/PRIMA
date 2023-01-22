@@ -5,6 +5,6 @@
 "backwardForceBlue": 7,
 "forwardForceRed": 10,
 "backwardForceRed": -7,
-"ballMass": 2
+"ballMass": 2.5
 
 }

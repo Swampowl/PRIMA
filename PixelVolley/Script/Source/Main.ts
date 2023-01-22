@@ -77,6 +77,7 @@ namespace Script {
     //ball
     ball = branch.getChildrenByName("ball")[0];
     ball_rigid = ball.getComponent(ƒ.ComponentRigidbody);
+    ball_rigid.mass = config.ballMass;
     ball_rigid.effectRotation = new ƒ.Vector3(0, 0, 1);
 
     //net
