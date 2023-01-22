@@ -461,12 +461,12 @@
                 {
                   "ƒ.ComponentRigidbody": {
                     "initialization": "TO_PIVOT",
-                    "friction": 0,
+                    "friction": 0.30000000000000004,
                     "restitution": 0.9999999999999999,
-                    "mass": 0.3400000000000004,
+                    "mass": 1.0999999999999999,
                     "dampTranslation": 0,
                     "dampRotation": 0,
-                    "effectGravity": 0.08900000000000002,
+                    "effectGravity": 0.30000000000000016,
                     "typeBody": "DYNAMIC",
                     "typeCollider": "CYLINDER",
                     "isTrigger": false,
@@ -836,24 +836,7 @@
                   }
                 }
               ],
-              "ComponentMaterial": [
-                {
-                  "ƒ.ComponentMaterial": {
-                    "sortForAlpha": false,
-                    "clrPrimary": "[1, 1, 1, 1]",
-                    "clrSecondary": "[1, 1, 1, 1]",
-                    "pivot": {
-                      "translation": "[0, 0]",
-                      "rotation": 0,
-                      "scaling": "[0.12999990582466125, 1]"
-                    },
-                    "Component": {
-                      "active": true
-                    },
-                    "idMaterial": "Material|2023-01-12T13:24:30.413Z|67576"
-                  }
-                }
-              ],
+              "ComponentMaterial": [],
               "ComponentTransform": [
                 {
                   "ƒ.ComponentTransform": {
@@ -873,9 +856,9 @@
                   "ƒ.ComponentRigidbody": {
                     "initialization": "TO_PIVOT",
                     "friction": 0.19999999999999996,
-                    "restitution": 0.2,
-                    "mass": 1,
-                    "dampTranslation": 1,
+                    "restitution": 0.9999999999999999,
+                    "mass": 1.2999999999999994,
+                    "dampTranslation": 0.8,
                     "dampRotation": 0.1,
                     "effectGravity": 1,
                     "typeBody": "DYNAMIC",
@@ -982,24 +965,7 @@
                   }
                 }
               ],
-              "ComponentMaterial": [
-                {
-                  "ƒ.ComponentMaterial": {
-                    "sortForAlpha": false,
-                    "clrPrimary": "[1, 1, 1, 1]",
-                    "clrSecondary": "[1, 1, 1, 1]",
-                    "pivot": {
-                      "translation": "[0, 0]",
-                      "rotation": 0,
-                      "scaling": "[0.12999998033046722, 1]"
-                    },
-                    "Component": {
-                      "active": true
-                    },
-                    "idMaterial": "Material|2023-01-12T13:15:46.407Z|71355"
-                  }
-                }
-              ],
+              "ComponentMaterial": [],
               "ComponentTransform": [
                 {
                   "ƒ.ComponentTransform": {
@@ -1019,9 +985,9 @@
                   "ƒ.ComponentRigidbody": {
                     "initialization": "TO_PIVOT",
                     "friction": 0.2,
-                    "restitution": 0.2,
-                    "mass": 1,
-                    "dampTranslation": 1,
+                    "restitution": 0.9999999999999999,
+                    "mass": 1.1999999999999993,
+                    "dampTranslation": 0.8,
                     "dampRotation": 0.1,
                     "effectGravity": 1,
                     "typeBody": "DYNAMIC",
