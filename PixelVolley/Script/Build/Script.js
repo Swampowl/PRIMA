@@ -100,6 +100,7 @@ var Script;
         ball = branch.getChildrenByName("ball")[0];
         ball_rigid = ball.getComponent(ƒ.ComponentRigidbody);
         ball_rigid.mass = config.ballMass;
+        ball_rigid.effectGravity = config.ballGravity;
         ball_rigid.effectRotation = new ƒ.Vector3(0, 0, 1);
         //net
         net = branch.getChildrenByName("net")[0];

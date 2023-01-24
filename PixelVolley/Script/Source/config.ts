@@ -6,6 +6,7 @@ namespace Script {
       forwardForceRed: number;
       backwardForceRed: number;
       ballMass: number;
+      ballGravity: number
     }
   
 

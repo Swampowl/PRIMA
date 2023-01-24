@@ -1,10 +1,11 @@
 {
 
-"jumpImpulse": 1.5,
+"jumpImpulse": 0.5,
 "forwardForceBlue": -10,
 "backwardForceBlue": 7,
 "forwardForceRed": 10,
 "backwardForceRed": -7,
-"ballMass": 2.5
+"ballMass": 2.5,
+"ballGravity": 1
 
 }
