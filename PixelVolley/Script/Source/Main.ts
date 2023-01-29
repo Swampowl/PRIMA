@@ -1,7 +1,7 @@
 namespace Script {
   import ƒ = FudgeCore;
-  import ƒAid = FudgeAid;
-
+  //import ƒAid = FudgeAid;
+  //import ƒui = FudgeUserInterface;
 
   let branch: ƒ.Node;
   ƒ.Debug.info("Main Program Template running!");
@@ -24,6 +24,8 @@ namespace Script {
   let wall_left: ƒ.Node;
   let wall_left_rigid: ƒ.ComponentRigidbody;
   let posBall_rigid: ƒ.Vector3;
+
+  export let controllerStats: StandingsCounter;
 
 
   export let config: config;
@@ -73,6 +75,8 @@ namespace Script {
     wall_right = branch.getChildrenByName("wall_right")[0];
     wall_right_rigid = wall_right.getComponent(ƒ.ComponentRigidbody);
     wall_right_rigid.effectRotation = new ƒ.Vector3(0, 0, 0);
+
+    // controllerStats = new StandingsCounter();
 
     ƒ.Loop.start();
 

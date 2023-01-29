@@ -2,6 +2,8 @@
 var Script;
 (function (Script) {
     var ƒ = FudgeCore;
+    //import ƒAid = FudgeAid;
+    //import ƒui = FudgeUserInterface;
     let branch;
     ƒ.Debug.info("Main Program Template running!");
     let cmpCamera;
@@ -48,6 +50,7 @@ var Script;
         wall_right = branch.getChildrenByName("wall_right")[0];
         wall_right_rigid = wall_right.getComponent(ƒ.ComponentRigidbody);
         wall_right_rigid.effectRotation = new ƒ.Vector3(0, 0, 0);
+        // controllerStats = new StandingsCounter();
         ƒ.Loop.start();
     }
     // function checkScore()
@@ -66,6 +69,24 @@ var Script;
         ball_rigid.setPosition(posBall_rigid);
         // console.log(pos_blueBlob_rigid.y);
     }
+})(Script || (Script = {}));
+var Script;
+(function (Script) {
+    var ƒ = FudgeCore;
+    //import ƒAid = FudgeAid;
+    var ƒui = FudgeUserInterface;
+    class StandingsCounter extends ƒ.Mutable {
+        reduceMutator(_mutator) {
+        }
+        controller;
+        counterRed;
+        counterBlue;
+        constructor() {
+            super();
+            this.controller = new ƒui.Controller(this, document.querySelector("#vui"));
+        }
+    }
+    Script.StandingsCounter = StandingsCounter;
 })(Script || (Script = {}));
 var Script;
 (function (Script) {
