@@ -19,6 +19,9 @@ var Script;
     let wall_left;
     let wall_left_rigid;
     let posBall_rigid;
+    let playedAudio;
+    let scoreBlue = 0;
+    let scoreRed = 0;
     document.addEventListener("interactiveViewportStarted", start);
     async function start(_event) {
         Script.viewport = _event.detail;
@@ -38,6 +41,27 @@ var Script;
         ball_rigid.mass = Script.config.ballMass;
         ball_rigid.effectGravity = Script.config.ballGravity;
         ball_rigid.effectRotation = new ƒ.Vector3(0, 0, 1);
+        ball.getComponent(ƒ.ComponentRigidbody).addEventListener("ColliderEnteredCollision" /* COLLISION_ENTER */, (_event) => {
+            let collisionPartner;
+            //     console.log(_event);
+            console.log(_event.cmpRigidbody.node.name);
+            collisionPartner = _event.cmpRigidbody.node.name;
+            if (collisionPartner === "character_red" || collisionPartner === "character_blue") {
+                playedSound();
+                console.log(collisionPartner);
+            }
+            if (collisionPartner === ("rigid_right_point")) {
+                scoreRed++;
+                // controllerStats.counterRed++;
+            }
+            ;
+            //score Blue
+            if (collisionPartner === ("rigid_left_point")) {
+                scoreBlue++;
+                //controllerStats.counterRed++;
+            }
+            ;
+        });
         //net
         net = branch.getChildrenByName("net")[0];
         net_rigid = net.getComponent(ƒ.ComponentRigidbody);
@@ -53,13 +77,25 @@ var Script;
         // controllerStats = new StandingsCounter();
         ƒ.Loop.start();
     }
-    // function checkScore()
+    function playedSound() {
+        let audio = new ƒ.Audio("audio/ball_ hit1.mp3");
+        playedAudio = new ƒ.ComponentAudio(audio, false, false);
+        playedAudio.connect(true);
+        playedAudio.volume = 0.2;
+        console.log("AAAAAAAAAAAAAAAAAAADUSI");
+        playedAudio.play(true);
+    }
+    function checkEnd() {
+        if (controllerStats.counterBlue === Script.config.maxScore || controllerStats.counterRed === Script.config.maxScore)
+            console.log("A player scored " + Script.config.maxScore + " points. Game ends now.");
+    }
     function update(_event) {
         ƒ.Physics.simulate();
         Script.viewport.draw();
         ƒ.AudioManager.default.update();
         redBlob.movement();
         blueBlob.movement();
+        // checkEnd();
         // console.log(ball.mtxLocal.translation.toString())
         posBall_rigid = ball_rigid.getPosition();
         posBall_rigid.z = 3;
@@ -76,14 +112,14 @@ var Script;
     //import ƒAid = FudgeAid;
     var ƒui = FudgeUserInterface;
     class StandingsCounter extends ƒ.Mutable {
-        reduceMutator(_mutator) {
-        }
         controller;
         counterRed;
         counterBlue;
         constructor() {
             super();
             this.controller = new ƒui.Controller(this, document.querySelector("#vui"));
+        }
+        reduceMutator(_mutator) {
         }
     }
     Script.StandingsCounter = StandingsCounter;

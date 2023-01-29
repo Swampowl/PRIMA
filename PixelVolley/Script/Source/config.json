@@ -6,6 +6,7 @@
 "forwardForceRed": 10,
 "backwardForceRed": -7,
 "ballMass": 2.5,
-"ballGravity": 1
+"ballGravity": 1,
+"maxScore":10
 
 }

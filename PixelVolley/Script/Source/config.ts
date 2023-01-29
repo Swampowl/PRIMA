@@ -7,6 +7,7 @@ namespace Script {
       backwardForceRed: number;
       ballMass: number;
       ballGravity: number
+      maxScore: number;
     }
   
 

@@ -13,8 +13,6 @@ namespace Script {
 
   let redBlob: CharacterRed;
   let blueBlob: CharacterBlue;
-
-
   let net: ƒ.Node;
   let net_rigid: ƒ.ComponentRigidbody;
   let ball: ƒ.Node;
@@ -24,8 +22,11 @@ namespace Script {
   let wall_left: ƒ.Node;
   let wall_left_rigid: ƒ.ComponentRigidbody;
   let posBall_rigid: ƒ.Vector3;
+  let playedAudio: ƒ.ComponentAudio;
+  let scoreBlue: number = 0;
+  let scoreRed: number = 0;
 
-  export let controllerStats: StandingsCounter;
+  // export let controllerStats: StandingsCounter;
 
 
   export let config: config;
@@ -54,12 +55,45 @@ namespace Script {
 
 
 
+
     //ball
     ball = branch.getChildrenByName("ball")[0];
     ball_rigid = ball.getComponent(ƒ.ComponentRigidbody);
     ball_rigid.mass = config.ballMass;
     ball_rigid.effectGravity = config.ballGravity;
     ball_rigid.effectRotation = new ƒ.Vector3(0, 0, 1);
+
+
+    ball.getComponent(ƒ.ComponentRigidbody).addEventListener(
+      ƒ.EVENT_PHYSICS.COLLISION_ENTER,
+      (_event: any) => {
+        let collisionPartner: string;
+        //     console.log(_event);
+        console.log(_event.cmpRigidbody.node.name);
+        collisionPartner = _event.cmpRigidbody.node.name;
+
+        if (collisionPartner === "character_red" || collisionPartner === "character_blue") {
+          playedSound();
+          console.log(collisionPartner);
+        }
+
+        if (collisionPartner === ("rigid_right_point")) {
+          scoreRed++;
+          // controllerStats.counterRed++;
+        };
+
+        //score Blue
+
+        if (collisionPartner === ("rigid_left_point")) {
+          scoreBlue++;
+          //controllerStats.counterRed++;
+
+        };
+
+
+
+      }
+    );
 
     //net
     net = branch.getChildrenByName("net")[0];
@@ -82,7 +116,22 @@ namespace Script {
 
   }
 
-  // function checkScore()
+  function playedSound() {
+
+    let audio = new ƒ.Audio("audio/ball_ hit1.mp3");
+    playedAudio = new ƒ.ComponentAudio(audio, false, false);
+    playedAudio.connect(true);
+    playedAudio.volume = 0.2;
+    console.log("AAAAAAAAAAAAAAAAAAADUSI")
+    playedAudio.play(true);
+  }
+
+  function checkEnd() {
+    if (controllerStats.counterBlue === config.maxScore || controllerStats.counterRed === config.maxScore)
+      console.log("A player scored " + config.maxScore + " points. Game ends now.")
+  }
+
+
 
   function update(_event: Event): void {
     ƒ.Physics.simulate();
@@ -90,6 +139,8 @@ namespace Script {
     ƒ.AudioManager.default.update();
     redBlob.movement();
     blueBlob.movement();
+    // checkEnd();
+
     // console.log(ball.mtxLocal.translation.toString())
     posBall_rigid = ball_rigid.getPosition();
     posBall_rigid.z = 3;
@@ -100,6 +151,4 @@ namespace Script {
     ball_rigid.setPosition(posBall_rigid);
     // console.log(pos_blueBlob_rigid.y);
   }
-
-
 }

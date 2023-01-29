@@ -1,18 +1,17 @@
 declare namespace Script {
     import ƒ = FudgeCore;
     let viewport: ƒ.Viewport;
-    let controllerStats: StandingsCounter;
     let config: config;
 }
 declare namespace Script {
     import ƒ = FudgeCore;
     import ƒui = FudgeUserInterface;
     class StandingsCounter extends ƒ.Mutable {
-        protected reduceMutator(_mutator: ƒ.Mutator): void;
         controller: ƒui.Controller;
         counterRed: number;
         counterBlue: number;
         constructor();
+        protected reduceMutator(_mutator: ƒ.Mutator): void;
     }
 }
 declare namespace Script {
@@ -67,5 +66,6 @@ declare namespace Script {
         backwardForceRed: number;
         ballMass: number;
         ballGravity: number;
+        maxScore: number;
     }
 }
