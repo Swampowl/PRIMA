@@ -74,7 +74,7 @@ var Script;
         wall_right = branch.getChildrenByName("wall_right")[0];
         wall_right_rigid = wall_right.getComponent(ƒ.ComponentRigidbody);
         wall_right_rigid.effectRotation = new ƒ.Vector3(0, 0, 0);
-        // controllerStats = new StandingsCounter();
+        Script.controllerStats = new Script.StandingsCounter();
         ƒ.Loop.start();
     }
     function playedSound() {
@@ -86,7 +86,7 @@ var Script;
         playedAudio.play(true);
     }
     function checkEnd() {
-        if (controllerStats.counterBlue === Script.config.maxScore || controllerStats.counterRed === Script.config.maxScore)
+        if (Script.controllerStats.counterBlue === Script.config.maxScore || Script.controllerStats.counterRed === Script.config.maxScore)
             console.log("A player scored " + Script.config.maxScore + " points. Game ends now.");
     }
     function update(_event) {

@@ -1,6 +1,7 @@
 declare namespace Script {
     import ƒ = FudgeCore;
     let viewport: ƒ.Viewport;
+    let controllerStats: StandingsCounter;
     let config: config;
 }
 declare namespace Script {

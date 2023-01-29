@@ -26,7 +26,7 @@ namespace Script {
   let scoreBlue: number = 0;
   let scoreRed: number = 0;
 
-  // export let controllerStats: StandingsCounter;
+  export let controllerStats: StandingsCounter;
 
 
   export let config: config;
@@ -110,7 +110,7 @@ namespace Script {
     wall_right_rigid = wall_right.getComponent(ƒ.ComponentRigidbody);
     wall_right_rigid.effectRotation = new ƒ.Vector3(0, 0, 0);
 
-    // controllerStats = new StandingsCounter();
+    controllerStats = new StandingsCounter();
 
     ƒ.Loop.start();
 
