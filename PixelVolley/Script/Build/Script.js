@@ -20,8 +20,6 @@ var Script;
     let wall_left_rigid;
     let posBall_rigid;
     let playedAudio;
-    let scoreBlue = 0;
-    let scoreRed = 0;
     document.addEventListener("interactiveViewportStarted", start);
     async function start(_event) {
         Script.viewport = _event.detail;
@@ -46,22 +44,30 @@ var Script;
             //     console.log(_event);
             console.log(_event.cmpRigidbody.node.name);
             collisionPartner = _event.cmpRigidbody.node.name;
-            if (collisionPartner === "character_red" || collisionPartner === "character_blue") {
+            if (collisionPartner === "character_red" || collisionPartner === "character_blue" || collisionPartner === "rigid_lower") {
                 playedSound();
                 console.log(collisionPartner);
+                ball_rigid.effectGravity = Script.config.ballGravity;
             }
             if (collisionPartner === ("rigid_right_point")) {
-                scoreRed++;
-                // controllerStats.counterRed++;
+                Script.controllerStats.counterRed++;
+                ball_rigid.effectGravity = 0;
+                ball_rigid.setPosition(new ƒ.Vector3(1, -1.5, 3));
+                ball_rigid.setVelocity(new ƒ.Vector3(0, 0, 0));
             }
             ;
             //score Blue
             if (collisionPartner === ("rigid_left_point")) {
-                scoreBlue++;
-                //controllerStats.counterRed++;
+                Script.controllerStats.counterBlue++;
+                ball_rigid.effectGravity = 0;
+                ball_rigid.setPosition(new ƒ.Vector3(-1, -1.5, 3));
+                ball_rigid.setVelocity(new ƒ.Vector3(0, 0, 0));
+                // 
+                // ball_rigid.setPosition(new ƒ.Vector3(-2, 1, 3))
             }
             ;
         });
+        //document.getElementById("#vui").style.display = "block";
         //net
         net = branch.getChildrenByName("net")[0];
         net_rigid = net.getComponent(ƒ.ComponentRigidbody);
@@ -95,7 +101,7 @@ var Script;
         ƒ.AudioManager.default.update();
         redBlob.movement();
         blueBlob.movement();
-        // checkEnd();
+        checkEnd();
         // console.log(ball.mtxLocal.translation.toString())
         posBall_rigid = ball_rigid.getPosition();
         posBall_rigid.z = 3;
@@ -113,8 +119,8 @@ var Script;
     var ƒui = FudgeUserInterface;
     class StandingsCounter extends ƒ.Mutable {
         controller;
-        counterRed;
-        counterBlue;
+        counterRed = 0;
+        counterBlue = 0;
         constructor() {
             super();
             this.controller = new ƒui.Controller(this, document.querySelector("#vui"));

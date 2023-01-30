@@ -4,10 +4,10 @@ namespace Script {
     import ƒui = FudgeUserInterface;
 
     export class StandingsCounter extends ƒ.Mutable {
-        
+
         controller: ƒui.Controller;
-        counterRed: number;
-        counterBlue: number;
+        counterRed: number = 0;
+        counterBlue: number = 0;
 
 
         constructor() {

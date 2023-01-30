@@ -1,11 +1,11 @@
 {
 
-"jumpImpulse": 0.5,
+"jumpImpulse": 1,
 "forwardForceBlue": -10,
 "backwardForceBlue": 7,
 "forwardForceRed": 10,
 "backwardForceRed": -7,
-"ballMass": 2.5,
+"ballMass": 0.5,
 "ballGravity": 1,
 "maxScore":10
 

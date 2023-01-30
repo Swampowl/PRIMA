@@ -23,8 +23,7 @@ namespace Script {
   let wall_left_rigid: ƒ.ComponentRigidbody;
   let posBall_rigid: ƒ.Vector3;
   let playedAudio: ƒ.ComponentAudio;
-  let scoreBlue: number = 0;
-  let scoreRed: number = 0;
+
 
   export let controllerStats: StandingsCounter;
 
@@ -56,6 +55,7 @@ namespace Script {
 
 
 
+
     //ball
     ball = branch.getChildrenByName("ball")[0];
     ball_rigid = ball.getComponent(ƒ.ComponentRigidbody);
@@ -72,21 +72,32 @@ namespace Script {
         console.log(_event.cmpRigidbody.node.name);
         collisionPartner = _event.cmpRigidbody.node.name;
 
-        if (collisionPartner === "character_red" || collisionPartner === "character_blue") {
+        if (collisionPartner === "character_red" || collisionPartner === "character_blue" || collisionPartner === "rigid_lower") {
           playedSound();
           console.log(collisionPartner);
+          ball_rigid.effectGravity = config.ballGravity;
         }
 
         if (collisionPartner === ("rigid_right_point")) {
-          scoreRed++;
-          // controllerStats.counterRed++;
+
+          controllerStats.counterRed++;
+          ball_rigid.effectGravity = 0;
+          ball_rigid.setPosition(new ƒ.Vector3(1, -1.5, 3));
+          ball_rigid.setVelocity(new ƒ.Vector3(0, 0, 0));
+
         };
+
 
         //score Blue
 
         if (collisionPartner === ("rigid_left_point")) {
-          scoreBlue++;
-          //controllerStats.counterRed++;
+
+          controllerStats.counterBlue++;
+          ball_rigid.effectGravity = 0;
+          ball_rigid.setPosition(new ƒ.Vector3(-1, -1.5, 3));
+          ball_rigid.setVelocity(new ƒ.Vector3(0, 0, 0));
+          // 
+          // ball_rigid.setPosition(new ƒ.Vector3(-2, 1, 3))
 
         };
 
@@ -94,6 +105,8 @@ namespace Script {
 
       }
     );
+
+    //document.getElementById("#vui").style.display = "block";
 
     //net
     net = branch.getChildrenByName("net")[0];
@@ -139,7 +152,7 @@ namespace Script {
     ƒ.AudioManager.default.update();
     redBlob.movement();
     blueBlob.movement();
-    // checkEnd();
+    checkEnd();
 
     // console.log(ball.mtxLocal.translation.toString())
     posBall_rigid = ball_rigid.getPosition();
