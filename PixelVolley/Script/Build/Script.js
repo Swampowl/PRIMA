@@ -179,7 +179,7 @@ var Script;
         };
         rotate = (_event) => {
             // console.log(viewport.getBranch().getChildrenByName("sun")[0].getComponent(ƒ.ComponentTransform).mtxLocal.rotate(new ƒ.Vector3(100, 100, (100 * ƒ.Loop.timeFrameGame) / 1000)));
-            Script.viewport.getBranch().getChildrenByName("sun")[0].getComponent(ƒ.ComponentTransform).mtxLocal.rotate(new ƒ.Vector3(1, 1, (-.1 * ƒ.Loop.timeFrameGame) / 1000000000000));
+            Script.viewport.getBranch().getChildrenByName("sun")[0].getComponent(ƒ.ComponentTransform).mtxLocal.rotate(new ƒ.Vector3(1, 1, (1 * ƒ.Loop.timeFrameGame) / 1000000000));
             // this.node.getComponent(ƒ.ComponentTransform).mtxLocal.rotate(new ƒ.Vector3(100, 100, (100 * ƒ.Loop.timeFrameGame) / 1000));
         };
     }

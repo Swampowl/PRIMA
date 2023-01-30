@@ -216,7 +216,7 @@
       "coat": {
         "ƒ.CoatTextured": {
           "color": "[1, 1, 1, 1]",
-          "idTexture": "TextureImage|2023-01-27T16:29:19.640Z|77158"
+          "idTexture": "TextureImage|2023-01-30T21:30:21.106Z|58317"
         }
       }
     }
@@ -283,6 +283,27 @@
         "idResource": "TextureImage|2023-01-30T15:50:48.770Z|89144",
         "name": "img_keys.png",
         "mipmap": "CRISP"
+      }
+    }
+  },
+  "MeshSphere|2023-01-30T18:04:04.739Z|27070": {
+    "ƒ.MeshSphere": {
+      "idResource": "MeshSphere|2023-01-30T18:04:04.739Z|27070",
+      "name": "mesh_shadow",
+      "type": "MeshSphere",
+      "longitudes": 8,
+      "latitudes": 8
+    }
+  },
+  "Material|2023-01-30T18:04:31.275Z|95961": {
+    "ƒ.Material": {
+      "name": "mat_shadow",
+      "idResource": "Material|2023-01-30T18:04:31.275Z|95961",
+      "shader": "ShaderLit",
+      "coat": {
+        "ƒ.CoatColored": {
+          "color": "[0.14901960784313725, 0.14901960784313725, 0.14901960784313725, 1]"
+        }
       }
     }
   },
@@ -645,7 +666,7 @@
                         "ƒ.ComponentAudio": {
                           "active": true,
                           "idResource": "Audio|2023-01-14T19:02:39.909Z|94840",
-                          "playing": true,
+                          "playing": false,
                           "loop": false,
                           "volume": 1
                         }
@@ -1131,7 +1152,7 @@
                     "pivot": {
                       "translation": "[0, 0]",
                       "rotation": 0,
-                      "scaling": "[1, -2.899998188018799]"
+                      "scaling": "[1.4399996995925903, 1.0000001192092896]"
                     },
                     "Component": {
                       "active": true
@@ -1491,24 +1512,14 @@
       "type": "Graph"
     }
   },
-  "MeshSphere|2023-01-30T18:04:04.739Z|27070": {
-    "ƒ.MeshSphere": {
-      "idResource": "MeshSphere|2023-01-30T18:04:04.739Z|27070",
-      "name": "mesh_shadow",
-      "type": "MeshSphere",
-      "longitudes": 8,
-      "latitudes": 8
-    }
-  },
-  "Material|2023-01-30T18:04:31.275Z|95961": {
-    "ƒ.Material": {
-      "name": "ShaderLit",
-      "idResource": "Material|2023-01-30T18:04:31.275Z|95961",
-      "shader": "ShaderLit",
-      "coat": {
-        "ƒ.CoatColored": {
-          "color": "[0.14901960784313725, 0.14901960784313725, 0.14901960784313725, 1]"
-        }
+  "TextureImage|2023-01-30T21:30:21.106Z|58317": {
+    "ƒ.TextureImage": {
+      "url": "Images\\moon.png",
+      "type": "TextureImage",
+      "Texture": {
+        "idResource": "TextureImage|2023-01-30T21:30:21.106Z|58317",
+        "name": "img_moon.png",
+        "mipmap": "CRISP"
       }
     }
   }
