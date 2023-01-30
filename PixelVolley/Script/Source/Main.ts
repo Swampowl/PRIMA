@@ -23,6 +23,7 @@ namespace Script {
   let wall_left_rigid: ƒ.ComponentRigidbody;
   let posBall_rigid: ƒ.Vector3;
   let playedAudio: ƒ.ComponentAudio;
+  // let shadow: ƒ.Node;
 
 
   export let controllerStats: StandingsCounter;
@@ -43,7 +44,7 @@ namespace Script {
     branch = viewport.getBranch();
     config = await (await fetch("Script/Source/config.json")).json();
 
-    // viewport.physicsDebugMode = ƒ.PHYSICS_DEBUGMODE.JOINTS_AND_COLLIDER; 
+    viewport.physicsDebugMode = ƒ.PHYSICS_DEBUGMODE.JOINTS_AND_COLLIDER;
 
     ƒ.Loop.addEventListener(ƒ.EVENT.LOOP_FRAME, update);
     //start the game loop to continously draw the viewport, update the audiosystem and drive the physics i/a
@@ -52,6 +53,9 @@ namespace Script {
     redBlob = new CharacterRed();
     blueBlob = new CharacterBlue();
 
+    // shadow
+
+    shadow = branch.getChildrenByName("ground")[0].getChildrenByName("shadow")[0];
 
 
 
@@ -72,19 +76,17 @@ namespace Script {
         console.log(_event.cmpRigidbody.node.name);
         collisionPartner = _event.cmpRigidbody.node.name;
 
-        if (collisionPartner === "character_red" || collisionPartner === "character_blue" || collisionPartner === "rigid_lower") {
+        if (collisionPartner === "character_red" || collisionPartner === "character_blue") {
           playedSound();
-          console.log(collisionPartner);
           ball_rigid.effectGravity = config.ballGravity;
         }
-
+        // score Red
         if (collisionPartner === ("rigid_right_point")) {
-
           controllerStats.counterRed++;
           ball_rigid.effectGravity = 0;
-          ball_rigid.setPosition(new ƒ.Vector3(1, -1.5, 3));
           ball_rigid.setVelocity(new ƒ.Vector3(0, 0, 0));
-
+          ball_rigid.setPosition(new ƒ.Vector3(1, -1.5, 3));
+          resetBlobbs();
         };
 
 
@@ -94,16 +96,22 @@ namespace Script {
 
           controllerStats.counterBlue++;
           ball_rigid.effectGravity = 0;
-          ball_rigid.setPosition(new ƒ.Vector3(-1, -1.5, 3));
           ball_rigid.setVelocity(new ƒ.Vector3(0, 0, 0));
-          // 
-          // ball_rigid.setPosition(new ƒ.Vector3(-2, 1, 3))
+          ball_rigid.setPosition(new ƒ.Vector3(-1, -1.5, 3));
+          resetBlobbs();
+
 
         };
+
+        if (collisionPartner === ("rigid_lower")) {
+          playedSound();
+          ball_rigid.effectGravity = config.ballGravity;
+        }
 
 
 
       }
+
     );
 
     //document.getElementById("#vui").style.display = "block";
@@ -126,7 +134,7 @@ namespace Script {
     controllerStats = new StandingsCounter();
 
     ƒ.Loop.start();
-
+    //  setShadow();
   }
 
   function playedSound() {
@@ -134,7 +142,7 @@ namespace Script {
     let audio = new ƒ.Audio("audio/ball_ hit1.mp3");
     playedAudio = new ƒ.ComponentAudio(audio, false, false);
     playedAudio.connect(true);
-    playedAudio.volume = 0.2;
+    playedAudio.volume = 0.8;
     console.log("AAAAAAAAAAAAAAAAAAADUSI")
     playedAudio.play(true);
   }
@@ -152,6 +160,7 @@ namespace Script {
     ƒ.AudioManager.default.update();
     redBlob.movement();
     blueBlob.movement();
+
     checkEnd();
 
     // console.log(ball.mtxLocal.translation.toString())
@@ -164,4 +173,13 @@ namespace Script {
     ball_rigid.setPosition(posBall_rigid);
     // console.log(pos_blueBlob_rigid.y);
   }
+
+  function resetBlobbs() {
+    redBlob.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(-2, -1.5, 3));
+    blueBlob.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(2, -1.5, 3));
+  }
+
+  // function setShadow() {
+  // shadow.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(0, posBall_rigid.y, 0));
+  // }
 }

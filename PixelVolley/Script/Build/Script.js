@@ -26,13 +26,15 @@ var Script;
         cmpCamera = Script.viewport.camera;
         branch = Script.viewport.getBranch();
         Script.config = await (await fetch("Script/Source/config.json")).json();
-        // viewport.physicsDebugMode = ƒ.PHYSICS_DEBUGMODE.JOINTS_AND_COLLIDER; 
+        Script.viewport.physicsDebugMode = ƒ.PHYSICS_DEBUGMODE.JOINTS_AND_COLLIDER;
         ƒ.Loop.addEventListener("loopFrame" /* LOOP_FRAME */, update);
         //start the game loop to continously draw the viewport, update the audiosystem and drive the physics i/a
         cmpCamera.mtxPivot.translate(new ƒ.Vector3(0, -1, 10));
         cmpCamera.mtxPivot.rotateY(180);
         redBlob = new Script.CharacterRed();
         blueBlob = new Script.CharacterBlue();
+        // shadow
+        shadow = branch.getChildrenByName("ground")[0].getChildrenByName("shadow")[0];
         //ball
         ball = branch.getChildrenByName("ball")[0];
         ball_rigid = ball.getComponent(ƒ.ComponentRigidbody);
@@ -44,28 +46,32 @@ var Script;
             //     console.log(_event);
             console.log(_event.cmpRigidbody.node.name);
             collisionPartner = _event.cmpRigidbody.node.name;
-            if (collisionPartner === "character_red" || collisionPartner === "character_blue" || collisionPartner === "rigid_lower") {
+            if (collisionPartner === "character_red" || collisionPartner === "character_blue") {
                 playedSound();
-                console.log(collisionPartner);
                 ball_rigid.effectGravity = Script.config.ballGravity;
             }
+            // score Red
             if (collisionPartner === ("rigid_right_point")) {
                 Script.controllerStats.counterRed++;
                 ball_rigid.effectGravity = 0;
-                ball_rigid.setPosition(new ƒ.Vector3(1, -1.5, 3));
                 ball_rigid.setVelocity(new ƒ.Vector3(0, 0, 0));
+                ball_rigid.setPosition(new ƒ.Vector3(1, -1.5, 3));
+                resetBlobbs();
             }
             ;
             //score Blue
             if (collisionPartner === ("rigid_left_point")) {
                 Script.controllerStats.counterBlue++;
                 ball_rigid.effectGravity = 0;
-                ball_rigid.setPosition(new ƒ.Vector3(-1, -1.5, 3));
                 ball_rigid.setVelocity(new ƒ.Vector3(0, 0, 0));
-                // 
-                // ball_rigid.setPosition(new ƒ.Vector3(-2, 1, 3))
+                ball_rigid.setPosition(new ƒ.Vector3(-1, -1.5, 3));
+                resetBlobbs();
             }
             ;
+            if (collisionPartner === ("rigid_lower")) {
+                playedSound();
+                ball_rigid.effectGravity = Script.config.ballGravity;
+            }
         });
         //document.getElementById("#vui").style.display = "block";
         //net
@@ -82,12 +88,13 @@ var Script;
         wall_right_rigid.effectRotation = new ƒ.Vector3(0, 0, 0);
         Script.controllerStats = new Script.StandingsCounter();
         ƒ.Loop.start();
+        //  setShadow();
     }
     function playedSound() {
         let audio = new ƒ.Audio("audio/ball_ hit1.mp3");
         playedAudio = new ƒ.ComponentAudio(audio, false, false);
         playedAudio.connect(true);
-        playedAudio.volume = 0.2;
+        playedAudio.volume = 0.8;
         console.log("AAAAAAAAAAAAAAAAAAADUSI");
         playedAudio.play(true);
     }
@@ -111,6 +118,13 @@ var Script;
         ball_rigid.setPosition(posBall_rigid);
         // console.log(pos_blueBlob_rigid.y);
     }
+    function resetBlobbs() {
+        redBlob.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(-2, -1.5, 3));
+        blueBlob.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(2, -1.5, 3));
+    }
+    // function setShadow() {
+    // shadow.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(0, posBall_rigid.y, 0));
+    // }
 })(Script || (Script = {}));
 var Script;
 (function (Script) {

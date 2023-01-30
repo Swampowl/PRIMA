@@ -10,11 +10,14 @@
 
 #vui{
   text-align: center;
+  size: 200px;
 }
 
 #bluePoints{
   border: 2px solid blue;
   border-radius: 4px;
+  color: blue;
+  size: 20px;
 
 }
 #redPoints{
@@ -24,4 +27,9 @@
 
 #startup{
   text-align: center;
+}
+
+#BlueC{
+  width: 20%;
+  height: 20%;
 }
