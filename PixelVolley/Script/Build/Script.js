@@ -26,7 +26,7 @@ var Script;
         cmpCamera = Script.viewport.camera;
         branch = Script.viewport.getBranch();
         Script.config = await (await fetch("Script/Source/config.json")).json();
-        Script.viewport.physicsDebugMode = ƒ.PHYSICS_DEBUGMODE.JOINTS_AND_COLLIDER;
+        //viewport.physicsDebugMode = ƒ.PHYSICS_DEBUGMODE.JOINTS_AND_COLLIDER;
         ƒ.Loop.addEventListener("loopFrame" /* LOOP_FRAME */, update);
         //start the game loop to continously draw the viewport, update the audiosystem and drive the physics i/a
         cmpCamera.mtxPivot.translate(new ƒ.Vector3(0, -1, 10));
@@ -34,7 +34,7 @@ var Script;
         redBlob = new Script.CharacterRed();
         blueBlob = new Script.CharacterBlue();
         // shadow
-        shadow = branch.getChildrenByName("ground")[0].getChildrenByName("shadow")[0];
+        // shadow = branch.getChildrenByName("ground")[0].getChildrenByName("shadow")[0];
         //ball
         ball = branch.getChildrenByName("ball")[0];
         ball_rigid = ball.getComponent(ƒ.ComponentRigidbody);
