@@ -85,9 +85,13 @@ namespace Script {
           controllerStats.counterRed++;
           ball_rigid.effectGravity = 0;
           ball_rigid.setVelocity(new ƒ.Vector3(0, 0, 0));
-          ball_rigid.setPosition(new ƒ.Vector3(1, -1.5, 3));
-          resetBlobbs();
+          ball_rigid.setPosition(new ƒ.Vector3(1.5, -1.3, 3));
+          // resetBlobbs();
         };
+
+        if (collisionPartner === ("rigid_lower")) {
+          ball_rigid.effectGravity = config.ballGravity;
+        }
 
 
         //score Blue
@@ -97,8 +101,8 @@ namespace Script {
           controllerStats.counterBlue++;
           ball_rigid.effectGravity = 0;
           ball_rigid.setVelocity(new ƒ.Vector3(0, 0, 0));
-          ball_rigid.setPosition(new ƒ.Vector3(-1, -1.5, 3));
-          resetBlobbs();
+          ball_rigid.setPosition(new ƒ.Vector3(-1.5, -1.3, 3));
+          // resetBlobbs();
 
 
         };
@@ -132,6 +136,8 @@ namespace Script {
     wall_right_rigid.effectRotation = new ƒ.Vector3(0, 0, 0);
 
     controllerStats = new StandingsCounter();
+
+    document.getElementById("vui").setAttribute("id", ("vuiDisplay"));
 
     ƒ.Loop.start();
     //  setShadow();
@@ -174,10 +180,10 @@ namespace Script {
     // console.log(pos_blueBlob_rigid.y);
   }
 
-  function resetBlobbs() {
-    redBlob.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(-2, -1.5, 3));
-    blueBlob.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(2, -1.5, 3));
-  }
+  // function resetBlobbs() {
+  // redBlob.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(-2, -1.5, 3));
+  // blueBlob.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(2, -1.5, 3));
+  // }
 
   // function setShadow() {
   // shadow.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(0, posBall_rigid.y, 0));

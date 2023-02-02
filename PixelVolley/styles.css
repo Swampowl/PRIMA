@@ -1,3 +1,13 @@
+html{
+
+  background-color: grey;
+}
+
+#canvas-container-display{
+  text-align: center;
+ 
+
+}
 #canvas-container{
   text-align: center;
 }
@@ -6,30 +16,47 @@
 
   width: 75%;
   height: 75%;
+  border: 5px solid black;
+  border-radius: 4px;
 }
 
 #vui{
   text-align: center;
-  size: 200px;
+  display: none;
+
+}
+#vuiDisplay{
+  text-align: center;
+
+
 }
 
 #bluePoints{
-  border: 2px solid blue;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #B38788;
+  text-align: center;
+  border: 2px solid #4335D6;
   border-radius: 4px;
-  color: blue;
-  size: 20px;
+  color: #4335D6;
+  size: 40px;
+  font-size: 95px;
+  width: 10%;
+  height: 5%;
 
 }
 #redPoints{
-  border: 2px solid red;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #B38788;
+  text-align: center;
+  border: 2px solid #B2344A;
   border-radius: 4px;
+  color: #B2344A;
+  size: 20px;
+  font-size: 95px;
+  width: 10%;
+  height: 5%;
 }
 
 #startup{
   text-align: center;
-}
-
-#BlueC{
-  width: 20%;
-  height: 20%;
 }

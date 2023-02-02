@@ -38,7 +38,7 @@
       "shader": "ShaderLitTextured",
       "coat": {
         "ƒ.CoatTextured": {
-          "color": "[1, 1, 1, 1]",
+          "color": "[1, 1, 1, 0.21]",
           "idTexture": "TextureImage|2023-01-12T15:06:42.936Z|67804"
         }
       }
@@ -62,7 +62,7 @@
       "shader": "ShaderLitTextured",
       "coat": {
         "ƒ.CoatTextured": {
-          "color": "[1, 1, 1, 1]",
+          "color": "[1, 1, 1, 0.43]",
           "idTexture": "TextureImage|2023-01-10T18:51:08.135Z|76143"
         }
       }
@@ -81,7 +81,7 @@
       "shader": "ShaderLitTextured",
       "coat": {
         "ƒ.CoatTextured": {
-          "color": "[1, 1, 1, 1]",
+          "color": "[1, 1, 1, 0.66]",
           "idTexture": "TextureImage|2023-01-11T23:15:56.263Z|95273"
         }
       }
@@ -111,7 +111,7 @@
       "shader": "ShaderLitTextured",
       "coat": {
         "ƒ.CoatTextured": {
-          "color": "[1, 1, 1, 1]",
+          "color": "[1, 1, 1, 0.59]",
           "idTexture": "TextureImage|2023-01-12T13:57:07.520Z|54364"
         }
       }
@@ -218,6 +218,17 @@
           "color": "[1, 1, 1, 1]",
           "idTexture": "TextureImage|2023-01-30T21:30:21.106Z|58317"
         }
+      }
+    }
+  },
+  "TextureImage|2023-01-30T21:30:21.106Z|58317": {
+    "ƒ.TextureImage": {
+      "url": "Images\\moon.png",
+      "type": "TextureImage",
+      "Texture": {
+        "idResource": "TextureImage|2023-01-30T21:30:21.106Z|58317",
+        "name": "img_moon.png",
+        "mipmap": "CRISP"
       }
     }
   },
@@ -1181,6 +1192,25 @@
                     }
                   }
                 }
+              ],
+              "ComponentLight": [
+                {
+                  "ƒ.ComponentLight": {
+                    "pivot": {
+                      "translation": "[0, 0, 0]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[1, 1, 1]"
+                    },
+                    "light": {
+                      "ƒ.LightAmbient": {
+                        "color": "[1, 1, 1, 1]"
+                      }
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
               ]
             },
             "children": []
@@ -1510,17 +1540,6 @@
       ],
       "idResource": "Graph|2023-01-10T19:14:25.382Z|48070",
       "type": "Graph"
-    }
-  },
-  "TextureImage|2023-01-30T21:30:21.106Z|58317": {
-    "ƒ.TextureImage": {
-      "url": "Images\\moon.png",
-      "type": "TextureImage",
-      "Texture": {
-        "idResource": "TextureImage|2023-01-30T21:30:21.106Z|58317",
-        "name": "img_moon.png",
-        "mipmap": "CRISP"
-      }
     }
   }
 }

@@ -1,12 +1,12 @@
 {
 
-"jumpImpulse": 1,
-"forwardForceBlue": -10,
+"jumpImpulse": 0.75,
+"forwardForceBlue": -15,
 "backwardForceBlue": 7,
-"forwardForceRed": 10,
+"forwardForceRed": 15,
 "backwardForceRed": -7,
-"ballMass": 0.5,
-"ballGravity": 1,
+"ballMass": 0.2,
+"ballGravity": 0.7,
 "maxScore":10
 
 }

@@ -55,17 +55,20 @@ var Script;
                 Script.controllerStats.counterRed++;
                 ball_rigid.effectGravity = 0;
                 ball_rigid.setVelocity(new ƒ.Vector3(0, 0, 0));
-                ball_rigid.setPosition(new ƒ.Vector3(1, -1.5, 3));
-                resetBlobbs();
+                ball_rigid.setPosition(new ƒ.Vector3(1.5, -1.3, 3));
+                // resetBlobbs();
             }
             ;
+            if (collisionPartner === ("rigid_lower")) {
+                ball_rigid.effectGravity = Script.config.ballGravity;
+            }
             //score Blue
             if (collisionPartner === ("rigid_left_point")) {
                 Script.controllerStats.counterBlue++;
                 ball_rigid.effectGravity = 0;
                 ball_rigid.setVelocity(new ƒ.Vector3(0, 0, 0));
-                ball_rigid.setPosition(new ƒ.Vector3(-1, -1.5, 3));
-                resetBlobbs();
+                ball_rigid.setPosition(new ƒ.Vector3(-1.5, -1.3, 3));
+                // resetBlobbs();
             }
             ;
             if (collisionPartner === ("rigid_lower")) {
@@ -87,6 +90,7 @@ var Script;
         wall_right_rigid = wall_right.getComponent(ƒ.ComponentRigidbody);
         wall_right_rigid.effectRotation = new ƒ.Vector3(0, 0, 0);
         Script.controllerStats = new Script.StandingsCounter();
+        document.getElementById("vui").setAttribute("id", ("vuiDisplay"));
         ƒ.Loop.start();
         //  setShadow();
     }
@@ -118,10 +122,10 @@ var Script;
         ball_rigid.setPosition(posBall_rigid);
         // console.log(pos_blueBlob_rigid.y);
     }
-    function resetBlobbs() {
-        redBlob.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(-2, -1.5, 3));
-        blueBlob.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(2, -1.5, 3));
-    }
+    // function resetBlobbs() {
+    // redBlob.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(-2, -1.5, 3));
+    // blueBlob.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(2, -1.5, 3));
+    // }
     // function setShadow() {
     // shadow.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(0, posBall_rigid.y, 0));
     // }
