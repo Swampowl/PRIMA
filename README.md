@@ -53,18 +53,18 @@ Der blaue (rechte) Blobb stuert wird mit den Pfeiltasten gesteuert.
 
 | Nr. | Kriterium  | Erklärung  |
 |-----|---|---|
-| 1   |   |   |
-| 2   |   |   |
-| 3   |   |   |
-| 4   |   |   |
-| 5   |   |   |
-| 6   |   |   |
-| 7   |   |   |
-| 8   |   |   |
-| 9   |   |   |
-| A   |   |   |
-| B   |   |   |
-| C   |   |   |
-| D   |   |   |
-| E   |   |   |
+| 1   | Units and Positions |   |
+| 2   | Hierarchy           |   |
+| 3   | Editor              |   |
+| 4   | Scriptcomponents    |   |
+| 5   | Extend              |   |
+| 6   | Sound               |   |
+| 7   | Interface           |   |
+| 8   | Event-System        |   |
+| 9   | External Data       |   |
+| A   | Light               |   |
+| B   | Physics             |   |
+| C   | Net                 |   |
+| D   | State Machines      |   |
+| E   | Animation           |   |
 
