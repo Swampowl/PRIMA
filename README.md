@@ -17,7 +17,9 @@ Year and season (Summer, Winter)
 Curriculum and semester
 Course this development was created in (PRIMA)
 Docent
-Link to the finished and executable application on Github-Pages
+
+Hier geht es zum [Spiel]: https://swampowl.github.io/PRIMA/PixelVolley/index.html
+
 Link to the source code
 Link to the design document
 Description for users on how to interact
