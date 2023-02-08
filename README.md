@@ -1,5 +1,9 @@
 # Pixel Volley
 
+Pixel Volley ist ein Arcade-Spiel für zwei Spieler die zeitgleich an einer Tastatur spielen. Dabei ist das spiel recht simpel gehalten. Die Kontrahenten spielen gegeneinander Volleyball. Wer zuerst 10 Punkte hat gewinnt. 
+
+<br>
+
 #### Author: <br>
 Florian Malitschenko
 
