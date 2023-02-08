@@ -76,7 +76,6 @@ var Script;
                 ball_rigid.effectGravity = Script.config.ballGravity;
             }
         });
-        //document.getElementById("#vui").style.display = "block";
         //net
         net = branch.getChildrenByName("net")[0];
         net_rigid = net.getComponent(ƒ.ComponentRigidbody);

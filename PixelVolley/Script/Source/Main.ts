@@ -118,7 +118,6 @@ namespace Script {
 
     );
 
-    //document.getElementById("#vui").style.display = "block";
 
     //net
     net = branch.getChildrenByName("net")[0];
