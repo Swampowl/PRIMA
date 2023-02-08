@@ -12,7 +12,7 @@ MIB 6
 Prima
 
 
-#### Kursleitung:<br>
+#### Kursleitung:
 Jirko Dell'Oro-Friedl
 
 
