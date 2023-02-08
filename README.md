@@ -1,10 +1,15 @@
-# PRIMA
+PRIMA
 
 # Pixel Volley
-Florian Malitschenko
+
+Author: Florian Malitschenko
+
 MIB 6
+
 Prima
+
 Jirko Dell'Oro-Friedl
+
 <>
 
 Author
