@@ -49,4 +49,22 @@ Der blaue (rechte) Blobb stuert wird mit den Pfeiltasten gesteuert.
 <br>
 
 #### Kriterienkatalog:<br>
-A copy of the catalogue of criteria above, the right column replaced with very brief explanations and descriptions of the fullfullments of these criteria
+
+
+| Nr. | Kriterium  | Erklärung  |
+|-----|---|---|
+| 1   |   |   |
+| 2   |   |   |
+| 3   |   |   |
+| 4   |   |   |
+| 5   |   |   |
+| 6   |   |   |
+| 7   |   |   |
+| 8   |   |   |
+| 9   |   |   |
+| A   |   |   |
+| B   |   |   |
+| C   |   |   |
+| D   |   |   |
+| E   |   |   |
+
