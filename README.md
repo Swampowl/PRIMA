@@ -18,7 +18,7 @@ Curriculum and semester
 Course this development was created in (PRIMA)
 Docent
 
-Hier geht es zum [Spiel]: https://swampowl.github.io/PRIMA/PixelVolley/index.html
+Hier geht es zum [Spiel](https://swampowl.github.io/PRIMA/PixelVolley/index.html)
 
 Link to the source code
 Link to the design document
