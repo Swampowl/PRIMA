@@ -9,7 +9,5 @@ namespace Script {
       ballGravity: number
       maxScore: number;
     }
-  
-
 
   }

@@ -81,7 +81,7 @@
       "shader": "ShaderLitTextured",
       "coat": {
         "ƒ.CoatTextured": {
-          "color": "[1, 1, 1, 0.66]",
+          "color": "[1, 1, 1, 1]",
           "idTexture": "TextureImage|2023-01-11T23:15:56.263Z|95273"
         }
       }
@@ -111,7 +111,7 @@
       "shader": "ShaderLitTextured",
       "coat": {
         "ƒ.CoatTextured": {
-          "color": "[1, 1, 1, 0.59]",
+          "color": "[1, 1, 1, 1]",
           "idTexture": "TextureImage|2023-01-12T13:57:07.520Z|54364"
         }
       }
@@ -322,7 +322,29 @@
     "ƒ.Graph": {
       "name": "g_world",
       "active": true,
-      "components": {},
+      "components": {
+        "ComponentLight": [
+          {
+            "ƒ.ComponentLight": {
+              "pivot": {
+                "translation": "[0, 0, 0]",
+                "rotation": "[0, 0, 0]",
+                "scaling": "[1, 1, 1]"
+              },
+              "light": {
+                "ƒ.LightAmbient": {
+                  "color": "[0.8274509803921568, 0.8784313725490196, 0.12156862745098039, 1]"
+                }
+              },
+              "Component": {
+                "active": true
+              }
+            }
+          }
+        ],
+        "ComponentMesh": [],
+        "ComponentMaterial": []
+      },
       "children": [
         {
           "ƒ.Node": {
@@ -1163,12 +1185,12 @@
                     "pivot": {
                       "translation": "[0, 0]",
                       "rotation": 0,
-                      "scaling": "[1.4399996995925903, 1.0000001192092896]"
+                      "scaling": "[1, 1]"
                     },
                     "Component": {
                       "active": true
                     },
-                    "idMaterial": "Material|2023-01-27T13:42:07.315Z|08765"
+                    "idMaterial": "Material|2023-02-15T12:13:42.054Z|65328"
                   }
                 }
               ],
@@ -1193,25 +1215,7 @@
                   }
                 }
               ],
-              "ComponentLight": [
-                {
-                  "ƒ.ComponentLight": {
-                    "pivot": {
-                      "translation": "[0, 0, 0]",
-                      "rotation": "[0, 0, 0]",
-                      "scaling": "[1, 1, 1]"
-                    },
-                    "light": {
-                      "ƒ.LightAmbient": {
-                        "color": "[1, 1, 1, 1]"
-                      }
-                    },
-                    "Component": {
-                      "active": true
-                    }
-                  }
-                }
-              ]
+              "ComponentLight": []
             },
             "children": []
           }
@@ -1540,6 +1544,34 @@
       ],
       "idResource": "Graph|2023-01-10T19:14:25.382Z|48070",
       "type": "Graph"
+    }
+  },
+  "Material|2023-02-15T12:13:42.054Z|65328": {
+    "ƒ.Material": {
+      "name": "mat_sun",
+      "idResource": "Material|2023-02-15T12:13:42.054Z|65328",
+      "shader": "ShaderPhong",
+      "coat": {
+        "ƒ.CoatRemissive": {
+          "color": "[1, 1, 1, 1]",
+          "diffuse": 1,
+          "specular": 0
+        }
+      }
+    }
+  },
+  "Material|2023-02-15T12:18:30.711Z|76687": {
+    "ƒ.Material": {
+      "name": "ShaderPhong",
+      "idResource": "Material|2023-02-15T12:18:30.711Z|76687",
+      "shader": "ShaderPhong",
+      "coat": {
+        "ƒ.CoatRemissive": {
+          "color": "[1, 1, 1, 1]",
+          "diffuse": 1,
+          "specular": 0
+        }
+      }
     }
   }
 }

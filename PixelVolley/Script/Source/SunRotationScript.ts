@@ -44,10 +44,5 @@ namespace Script {
       // this.node.getComponent(ƒ.ComponentTransform).mtxLocal.rotate(new ƒ.Vector3(100, 100, (100 * ƒ.Loop.timeFrameGame) / 1000));
 
     }
-
-    // protected reduceMutator(_mutator: ƒ.Mutator): void {
-    //   // delete properties that should not be mutated
-    //   // undefined properties and private fields (#) will not be included by default
-    // }
   }
 }

@@ -1,6 +1,6 @@
 {
 
-"jumpImpulse": 0.75,
+"jumpImpulse": 1.5,
 "forwardForceBlue": -15,
 "backwardForceBlue": 7,
 "forwardForceRed": 15,

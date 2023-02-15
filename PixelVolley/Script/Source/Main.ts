@@ -23,7 +23,6 @@ namespace Script {
   let wall_left_rigid: ƒ.ComponentRigidbody;
   let posBall_rigid: ƒ.Vector3;
   let playedAudio: ƒ.ComponentAudio;
-  // let shadow: ƒ.Node;
 
 
   export let controllerStats: StandingsCounter;
@@ -53,9 +52,7 @@ namespace Script {
     redBlob = new CharacterRed();
     blueBlob = new CharacterBlue();
 
-    // shadow
 
-    // shadow = branch.getChildrenByName("ground")[0].getChildrenByName("shadow")[0];
 
 
 
@@ -139,7 +136,6 @@ namespace Script {
     document.getElementById("vui").setAttribute("id", ("vuiDisplay"));
 
     ƒ.Loop.start();
-    //  setShadow();
   }
 
   function playedSound() {
@@ -153,8 +149,8 @@ namespace Script {
   }
 
   function checkEnd() {
-    if (controllerStats.counterBlue === config.maxScore || controllerStats.counterRed === config.maxScore)
-      console.log("A player scored " + config.maxScore + " points. Game ends now.")
+    console.log("A player scored " + config.maxScore + " points. Game ends now.")
+    location.reload();
   }
 
 
@@ -166,7 +162,10 @@ namespace Script {
     redBlob.movement();
     blueBlob.movement();
 
-    checkEnd();
+    if (controllerStats.counterBlue === config.maxScore || controllerStats.counterRed === config.maxScore) {
+      checkEnd();
+
+    }
 
     // console.log(ball.mtxLocal.translation.toString())
     posBall_rigid = ball_rigid.getPosition();
@@ -179,12 +178,4 @@ namespace Script {
     // console.log(pos_blueBlob_rigid.y);
   }
 
-  // function resetBlobbs() {
-  // redBlob.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(-2, -1.5, 3));
-  // blueBlob.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(2, -1.5, 3));
-  // }
-
-  // function setShadow() {
-  // shadow.getComponent(ƒ.ComponentRigidbody).setPosition(new ƒ.Vector3(0, posBall_rigid.y, 0));
-  // }
 }
