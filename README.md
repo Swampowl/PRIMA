@@ -1,36 +1,44 @@
 # Pixel Volley
 
 Pixel Volley ist ein Arcade-Spiel für zwei Spieler die zeitgleich an einer Tastatur spielen. Dabei ist das spiel recht simpel gehalten. Die Kontrahenten spielen gegeneinander Volleyball. Wer zuerst 10 Punkte hat gewinnt. <br>
+<br>
 
-#### Author: <br>
+#### Author:
 Florian Malitschenko<br>
+<br>
 
-#### Studiengang und Semester: <br>
+#### Studiengang und Semester:
 MIB 6<br>
+<br>
 
-#### Kurs:<br>
+#### Kurs:
 Prima<br>
+<br>
 
 #### Kursleitung:
 Jirka Dell'Oro-Friedl<br>
+<br>
 
-#### Spiel: <br>
+#### Spiel:
 ---> hier geht es zum [Spiel](https://swampowl.github.io/PRIMA/PixelVolley/index.html).<br>
+<br>
 
-#### SouceCode: <br>
+#### SouceCode:
 ---> hier geht es zum [SourceCode](https://github.com/Swampowl/PRIMA/tree/master/PixelVolley/Script/Source).<br>
+<br>
 
-#### Design-Dokument: <br>
+#### Design-Dokument:
 ---> hier geht es zum [Design-Dokument](https://swampowl.github.io/PRIMA/PixelVolley/Design_Document_Malitschenko.pdf).<br>
+<br>
 
-#### Steuerung: <br>
-
+#### Steuerung:
 Die Steuerung ist denkbar einfach. 
 
 Der rote (linke) Blobb steuert sich mit WASD.<br>
 Der blaue (rechte) Blobb stuert wird mit den Pfeiltasten gesteuert.<br>
+<br>
 
-#### Kriterienkatalog:<br>
+#### Kriterienkatalog:
 
 
 | Nr. | Kriterium  | Erklärung  |

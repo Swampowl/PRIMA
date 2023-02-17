@@ -318,6 +318,20 @@
       }
     }
   },
+  "Material|2023-02-15T12:13:42.054Z|65328": {
+    "ƒ.Material": {
+      "name": "mat_sun",
+      "idResource": "Material|2023-02-15T12:13:42.054Z|65328",
+      "shader": "ShaderPhong",
+      "coat": {
+        "ƒ.CoatRemissive": {
+          "color": "[1, 1, 1, 1]",
+          "diffuse": 1,
+          "specular": 0
+        }
+      }
+    }
+  },
   "Graph|2023-01-10T18:30:30.182Z|48587": {
     "ƒ.Graph": {
       "name": "g_world",
@@ -341,9 +355,7 @@
               }
             }
           }
-        ],
-        "ComponentMesh": [],
-        "ComponentMaterial": []
+        ]
       },
       "children": [
         {
@@ -699,9 +711,9 @@
                         "ƒ.ComponentAudio": {
                           "active": true,
                           "idResource": "Audio|2023-01-14T19:02:39.909Z|94840",
-                          "playing": false,
+                          "playing": true,
                           "loop": false,
-                          "volume": 1
+                          "volume": 0.4999999701976776
                         }
                       }
                     ]
@@ -1214,8 +1226,7 @@
                     }
                   }
                 }
-              ],
-              "ComponentLight": []
+              ]
             },
             "children": []
           }
@@ -1544,20 +1555,6 @@
       ],
       "idResource": "Graph|2023-01-10T19:14:25.382Z|48070",
       "type": "Graph"
-    }
-  },
-  "Material|2023-02-15T12:13:42.054Z|65328": {
-    "ƒ.Material": {
-      "name": "mat_sun",
-      "idResource": "Material|2023-02-15T12:13:42.054Z|65328",
-      "shader": "ShaderPhong",
-      "coat": {
-        "ƒ.CoatRemissive": {
-          "color": "[1, 1, 1, 1]",
-          "diffuse": 1,
-          "specular": 0
-        }
-      }
     }
   },
   "Material|2023-02-15T12:18:30.711Z|76687": {

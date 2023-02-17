@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Pixel Volley</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="pixel-volley">Pixel Volley</h1>
+<p>Pixel Volley ist ein Arcade-Spiel für zwei Spieler die zeitgleich an einer Tastatur spielen. Dabei ist das spiel recht simpel gehalten. Die Kontrahenten spielen gegeneinander Volleyball. Wer zuerst 10 Punkte hat gewinnt. <br>
+<br></p>
+<h4 id="author">Author:</h4>
+<p>Florian Malitschenko<br>
+<br></p>
+<h4 id="studiengang-und-semester">Studiengang und Semester:</h4>
+<p>MIB 6<br>
+<br></p>
+<h4 id="kurs">Kurs:</h4>
+<p>Prima<br>
+<br></p>
+<h4 id="kursleitung">Kursleitung:</h4>
+<p>Jirka Dell'Oro-Friedl<br>
+<br></p>
+<h4 id="spiel">Spiel:</h4>
+<p>---&gt; hier geht es zum <a href="https://swampowl.github.io/PRIMA/PixelVolley/index.html">Spiel</a>.<br>
+<br></p>
+<h4 id="soucecode">SouceCode:</h4>
+<p>---&gt; hier geht es zum <a href="https://github.com/Swampowl/PRIMA/tree/master/PixelVolley/Script/Source">SourceCode</a>.<br>
+<br></p>
+<h4 id="design-dokument">Design-Dokument:</h4>
+<p>---&gt; hier geht es zum <a href="https://swampowl.github.io/PRIMA/PixelVolley/Design_Document_Malitschenko.pdf">Design-Dokument</a>.<br>
+<br></p>
+<h4 id="steuerung">Steuerung:</h4>
+<p>Die Steuerung ist denkbar einfach.</p>
+<p>Der rote (linke) Blobb steuert sich mit WASD.<br>
+Der blaue (rechte) Blobb stuert wird mit den Pfeiltasten gesteuert.<br>
+<br></p>
+<h4 id="kriterienkatalog">Kriterienkatalog:</h4>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Kriterium</th>
+<th>Erklärung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Units and Positions</td>
+<td>Das Koordinatensystem des Spieles ist mittig angesetzt. Der Zentrumspunkt des Sichtfeldes ist dabei der Punkt (0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Hierarchy</td>
+<td>Die Welt an sich ist der oberste Graph der Hierarchie. An ihm liegen bis auf die Charaktere alle Nodes. Die Charaktere sind in einem extra Graphen, der sich in der Welt befindet, angelegt. Dies ermöglich sie unabhängig von der Welt zu verändern und schneller auf sie zugreifen zu können.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Editor</td>
+<td>Im Editor wurden die Meshes, Materials sowie Rigidbodys der Welt und Charaktere angelegt. Dies ermöglichte mir eine visuelle Grundvorstellung des Aufbaus. Jegliche Änderungen die hier während der Laufzeit vorgenommen werden, wurden per Code implementiert.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Scriptcomponents</td>
+<td>Der Mond, der im Spiel rotiert, wird per Scriptcomponent gesteuert. Für die Umsetzung meiner Idee war dies eigentlich nicht zwingend erforderlich, daher habe ich sie nur als potentielle Lichtquelle eingefügt.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Extend</td>
+<td>Die Spielercharaktere (Blobbs) werden in eigenen Klassen instanziiert. Hier werden die Blobbs und Ihre Animationen erstellt. Das ermöglicht, wenn gewünscht schnell neue Blobbs anzulegen und diese in die Spielszene einzufügen.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Sound</td>
+<td>Es gibt einen Hintergrund-Soundtrack und einen „Ball-Hit“ Sound, der abgespielt wird, sobald ein Blobb den Volleyball mit dem Kopf spielt. Dieser dient der auditiven Unterstützung des Spielers.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Interface</td>
+<td>Das Interface ist aus der Szene selbst ausgelagert und beinhaltet nur den Punktestand. Warum ausgelagert? Ich war der Meinung, dass es in der Szene zu sehr ablenken würde.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Event-System</td>
+<td>Es gibt einen hinterlegten Event-Listener, der Kollisionen der Rigidbodys abfängt und die Events weiterleitet. Dabei ist der „Ball-Hit“ Sound über dieses gesteuert, sowie der Punktecounter. In diesem Fall war der Eventtrigger nicht nur hilfreich, sondern auch erforderlich.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>External Data</td>
+<td>Im Ordner Script/Source liegt eine JSON-Datei mit dem Namen config.json. In dieser können die Richtwerte angepasst werden, ohne den gesamten Code durchstöbern zu müssen. In configRec.json findet man die von mit empfohlenen Werten.</td>
+</tr>
+<tr>
+<td>A</td>
+<td>Light</td>
+<td>Der rotierende Mond kann als Lichtquelle verwendet werden, um Atmosphäre zu schaffen. Momentan ist er allerdings keine Lichtquelle, da der Fokus des Spiels auf dem Volleyballfeld liegen soll und nicht auf den Lichteffekten im Hintergrund. Zudem sind alle Texturen als „ShaderLit“ angelegt.</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Physics</td>
+<td>Alle Meshes besitzen Rigidbodies, mit denen kollidiert werden kann.  Zudem werden die Blobbs bewegt, indem ihnen eine Force beim Tastendruck angehängt wird.</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Net</td>
+<td>Eine Netzwerkkomponente ist nicht implementiert, da das Spiel als lokaler Multiplayer an einer Tastatur ausgelegt ist. Es ist jedoch möglich, das Spiel um diese Komponente zu erweitern.</td>
+</tr>
+<tr>
+<td>D</td>
+<td>State Machines</td>
+<td>State Machines wurden nicht implementiert.</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Animation</td>
+<td>Die Animationen der Blobbs werden per Spritenodes generiert. Dies geschieht in der jeweiligen Klasse der Blobbs, um eine schnelle Erweiterung zu ermöglichen.</td>
+</tr>
+</tbody>
+</table>
+
+        
+        
+    </body>
+    </html>
