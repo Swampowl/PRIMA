@@ -35,7 +35,7 @@ Jirka Dell'Oro-Friedl
 <br>
 
 #### Design-Dokument: <br>
----> hier geht es zum [Design-Dokument].
+---> hier geht es zum [Design-Dokument](https://swampowl.github.io/PRIMA/PixelVolley/Design_Document_Malitschenko.pdf).
 
 <br>
 
