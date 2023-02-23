@@ -52,9 +52,7 @@ Der blaue (rechte) Blobb stuert wird mit den Pfeiltasten gesteuert.<br>
 | 7   | Interface           | Das Interface ist aus der Szene selbst ausgelagert und beinhaltet nur den Punktestand. Warum ausgelagert? Ich war der Meinung, dass es in der Szene zu sehr ablenken würde.  |
 | 8   | Event-System        |  Es gibt einen hinterlegten Event-Listener, der Kollisionen der Rigidbodys abfängt und die Events weiterleitet. Dabei ist der „Ball-Hit“ Sound über dieses gesteuert, sowie der Punktecounter. In diesem Fall war der Eventtrigger nicht nur hilfreich, sondern auch erforderlich. |
 | 9   | External Data       |  Im Ordner Script/Source liegt eine JSON-Datei mit dem Namen config.json. In dieser können die Richtwerte angepasst werden, ohne den gesamten Code durchstöbern zu müssen. In configRec.json findet man die von mit empfohlenen Werten. |
-| A   | Light               | Die rotierende Sonne wurde als Lichtquelle verwendet. 
-Da der Fokus des Spiels auf dem Volleyballfeld liegen soll und nicht auf den Lichteffekten im Hintergrund wurden die 
-umliegenden Texturen als „ShaderLit“ angelegt, was dazu führt, dass das Ambient Light der Sonne keinen Einfluss auf 
+| A   | Light               | Die rotierende Sonne wurde als Lichtquelle verwendet. Da der Fokus des Spiels auf dem Volleyballfeld liegen soll und nicht auf den Lichteffekten im ntergrund wurden die umliegenden Texturen als „ShaderLit“ angelegt, was dazu führt, dass das Ambient Light der Sonne keinen Einfluss auf 
 die Lichtstimmung des Spieles nimmt. (nachträglich in readme.md geändert)  |
 | B   | Physics             |  Alle Meshes besitzen Rigidbodies, mit denen kollidiert werden kann.  Zudem werden die Blobbs bewegt, indem ihnen eine Force beim Tastendruck angehängt wird. |
 | C   | Net                 |  Eine Netzwerkkomponente ist nicht implementiert, da das Spiel als lokaler Multiplayer an einer Tastatur ausgelegt ist. Es ist jedoch möglich, das Spiel um diese Komponente zu erweitern. |
